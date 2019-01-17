@@ -23,7 +23,7 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 
-@Mod(modid = TNCDetails.ModID, name = TNCDetails.ModName, version = "0.0.1", dependencies = TNCDetails.ModDependencies)
+@Mod(modid = TNCDetails.ModID, name = TNCDetails.ModName, TNCDetails.ModVersion, dependencies = TNCDetails.ModDependencies)
 public class TerraNexCorp
 {
 	@Instance(TNCDetails.ModID)
