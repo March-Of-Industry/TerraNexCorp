@@ -1,0 +1,10 @@
+item.Sword_Bedrock.name=Bedrock Sword
+item.Mace_Bedrock.name=Bedrock Mace
+item.Knife_Bedrock.name=Bedrock Knife
+item.Hammer_Bedrock.name=Bedrock Hammer
+item.Handle_HSLA.name=HSLA Handle
+item.Ore.Chromite.name=Chromite
+item.Ore.Poor Chromite.name=Poor Chromite
+item.Ore.Rich Chromite.name=Rich Chromite
+tile.Chromite Ore.Chromite.name=Chromite Ore
+item.Small Ore.Chromite.name=Chromite Sample

@@ -1,0 +1,39 @@
+{
+    
+"modListVersion": 2,
+    
+"modList": [{
+        
+"modid": "TNC",
+        
+"name": "Terra Nex Corp",
+        
+"description": "Custom Items for TerraFirmaPack",
+        
+"version": "${mod_version}",
+        
+"mcversion": "${minecraft_version}",
+        
+"url": "",
+        
+"updateUrl": "",
+        
+"authorList": ["Superfrogman98"],
+       
+ "credits": "Bletch, Emris, Dunk, Bioxx and Kitty For TerraFirmaCraft, StrayWolfe and Shurgent for making their addon code public",
+        
+"logoFile": "",
+        
+"screenshots": [],
+        
+"parent": "",
+        
+"requiredMods": [],
+        
+"dependencies": [],
+        
+"dependants": [  ],
+        
+"useDependencyInformation": "true"
+    }]
+}
