@@ -8,10 +8,12 @@ import com.bioxx.tfc.TerraFirmaCraft;
 import terranexcorp.core.TNCClientProxy;
 import terranexcorp.core.TNCCommonProxy;
 import terranexcorp.core.TNCDetails;
-import terranexcorp.core.TNCItemsSetup;
+import terranexcorp.core.TNCItems;
 import terranexcorp.core.TNCBlocks;
 import terranexcorp.core.TNCConfig;
+import terranexcorp.items.ItemHeat;
 import terranexcorp.worldgen.WorldGenChromiteRocks;
+
 
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
@@ -23,7 +25,7 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 
-@Mod(modid = TNCDetails.ModID, name = TNCDetails.ModName, TNCDetails.ModVersion, dependencies = TNCDetails.ModDependencies)
+@Mod(modid = TNCDetails.ModID, name = TNCDetails.ModName, version = TNCDetails.ModVersion, dependencies = TNCDetails.ModDependencies)
 public class TerraNexCorp
 {
 	@Instance(TNCDetails.ModID)
@@ -45,9 +47,9 @@ public class TerraNexCorp
 		FMLCommonHandler.instance().bus().register(new TNCConfig());
 
 
-		TNCItemsSetup.ItemSetup();
-		TNCBlocks.blockSetup();
-
+		TNCItems.init();
+		TNCBlocks.init();
+		ItemHeat.setupItemHeat();
 		GameRegistry.registerWorldGenerator(new WorldGenChromiteRocks(), 5);
 	}
 

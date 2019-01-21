@@ -7,7 +7,9 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
+
 import terranexcorp.core.TNCDetails;
+import terranexcorp.core.TNCTab;
 
 import com.bioxx.tfc.api.TFCOptions;
 import com.bioxx.tfc.api.Enums.EnumSize;
@@ -21,6 +23,7 @@ public class ItemTNCOreSmall extends ItemTNCOre
         super();
         this.setWeight(EnumWeight.HEAVY);
         this.setSize(EnumSize.TINY);
+        setCreativeTab(TNCTab.TNC_TAB);
     }
 
     @SuppressWarnings({"unchecked", "rawtypes"})

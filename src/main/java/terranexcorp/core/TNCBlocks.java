@@ -16,16 +16,24 @@ public class TNCBlocks
 
 	public static Block blockChromite;
 
-	public static void blockSetup()
+	public static void init()
+	{
+		setupBlocks();
+		registerBlocks();
+	}
+
+
+
+
+	public static void setupBlocks()
 	{
 		blockChromite = new BlockChromite(Material.rock).setHardness(10F).setResistance(10F).setBlockName("Chromite Ore");
-		registerBlocks();
+
 	}
 
 
 	public static void registerBlocks()
 	{
-
 		GameRegistry.registerBlock(blockChromite, ItemModOreBlock.class, "OreChromite");
 	}
 }

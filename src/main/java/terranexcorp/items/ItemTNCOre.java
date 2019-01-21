@@ -4,6 +4,7 @@ import terranexcorp.core.TNCGlobals;
 import com.bioxx.tfc.Items.ItemOre;
 import com.bioxx.tfc.api.Metal;
 import com.bioxx.tfc.api.TFCOptions;
+import terranexcorp.core.TNCTab;
 
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.item.ItemStack;
@@ -15,6 +16,7 @@ public class ItemTNCOre extends ItemOre
 	{
 		super();
 		metaNames = new String[] {"Chromite", "Rich Chromite", "Poor Chromite"};
+		setCreativeTab(TNCTab.TNC_TAB);
 	}
 
 	@Override

@@ -1,41 +1,106 @@
 package terranexcorp.core;
 
+import net.minecraft.item.Item.ToolMaterial;
+import net.minecraftforge.common.util.EnumHelper;
+import terranexcorp.core.TNCItems;
+import terranexcorp.items.tools.ItemNewSword;
+import terranexcorp.items.tools.ItemNewHammer;
+import terranexcorp.items.tools.ItemNewKnife;
+import terranexcorp.items.ItemTNCOre;
+import terranexcorp.items.ItemTNCIngot;
+import terranexcorp.items.ItemTNCMeltedMetal;
+import terranexcorp.items.ItemTNCMetalItem;
+import terranexcorp.items.ItemTNCDust;
+import terranexcorp.core.TNCDetails;
+import terranexcorp.core.TNCGlobals;
+import terranexcorp.items.ItemTNCOre;
+import terranexcorp.items.ItemTNCOreSmall;
+import net.minecraft.creativetab.CreativeTabs;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.item.Item;
 
+import com.bioxx.tfc.CommonProxy;
+import com.bioxx.tfc.TerraFirmaCraft;
+import com.bioxx.tfc.api.Metal;
+import com.bioxx.tfc.Core.Metal.Alloy;
+import com.bioxx.tfc.Core.Metal.AlloyManager;
+import com.bioxx.tfc.Core.Metal.MetalRegistry;
+
+import com.bioxx.tfc.api.Enums.EnumDamageType;
+
 public class TNCItems
 {
-	public static Item itemHandle_HSLA;
+    public static Item itemHandle_HSLA;
 
 
-	public static Item itemSword_Bedrock;
-	//public static Item itemSword_Bedrock_Head;
-
-
-	public static Item itemMace_Bedrock;
-	//public static Item itemMace_Bedrock_Head;
-
+    public static Item itemSword_Bedrock;
+    public static Item itemMace_Bedrock;
     public static Item itemKnife_Bedrock;
     public static Item itemHammer_Bedrock;
 
-	public static Item ferroChromeIngot;
-	public static Item ferroChromeUnshaped;
+    public static Item ferroChromeIngot;
+    public static Item ferroChromeUnshaped;
 
-	public static Item oreChunk;
-	public static Item smallOreChunk;
+    public static Item oreChunk;
+    public static Item smallOreChunk;
+
+    //Materials
+    public static ToolMaterial BedrockToolMaterial;
+    public static int BedrockUses = -1;
+    public static float BedrockEff = 18;
+    public static int DepleatableBedrockUses = 2000000000;
 
 
-	public static void registerItems()
+
+
+
+    public static void init()
+    {
+        ItemSetup();
+        registerItems();
+        registerMetal();
+    }
+
+
+
+	public static void ItemSetup()
 	{
-        GameRegistry.registerItem(itemHandle_HSLA, itemHandle_HSLA.getUnlocalizedName());
+	    //Materials
+		BedrockToolMaterial = EnumHelper.addToolMaterial("Bedrock", 3, BedrockUses, BedrockEff, 240, 22);
+		//Components
+		itemHandle_HSLA = new ItemNewSword(BedrockToolMaterial,1,EnumDamageType.PIERCING).setUnlocalizedName("Handle_HSLA").setMaxDamage(BedrockUses);
 
-		GameRegistry.registerItem(itemSword_Bedrock, itemSword_Bedrock.getUnlocalizedName());
-		//GameRegistry.registerItem(itemSword_Bedrock_Head, itemSword_Bedrock_Head.getUnlocalizedName());
-		GameRegistry.registerItem(itemMace_Bedrock, itemMace_Bedrock.getUnlocalizedName());
-		//GameRegistry.registerItem(itemMace_Bedrock_Head, itemMace_Bedrock_Head.getUnlocalizedName());
+		//Tools
+		itemSword_Bedrock = new ItemNewSword(BedrockToolMaterial,TNCConfig.bedSwordDamage,EnumDamageType.SLASHING).setUnlocalizedName("Sword_Bedrock").setMaxDamage(BedrockUses);
+		itemMace_Bedrock = new ItemNewSword(BedrockToolMaterial,TNCConfig.bedMaceDamage,EnumDamageType.CRUSHING).setUnlocalizedName("Mace_Bedrock").setMaxDamage(BedrockUses);
+		itemKnife_Bedrock = new ItemNewKnife(BedrockToolMaterial,TNCConfig.bedKnifeDamage).setUnlocalizedName("Knife_Bedrock").setMaxDamage(DepleatableBedrockUses);
+		itemHammer_Bedrock = new ItemNewHammer(BedrockToolMaterial,TNCConfig.bedHammerDamage).setUnlocalizedName("Hammer_Bedrock").setMaxDamage(BedrockUses);
+
+		//ingots
+		ferroChromeIngot = new ItemTNCIngot("Ferrochrome",100).setUnlocalizedName("Ferrochrome Ingot");
+		ferroChromeUnshaped = new ItemTNCMeltedMetal().setUnlocalizedName("Ferrochrome Unshaped");
+
+		//ores
+		oreChunk = new ItemTNCOre().setFolder("ores/").setUnlocalizedName("Ore");
+		smallOreChunk = new ItemTNCOreSmall().setUnlocalizedName("Small Ore");
+	}
+
+    public static void registerItems()
+    {
+        GameRegistry.registerItem(itemHandle_HSLA, itemHandle_HSLA.getUnlocalizedName());
+        GameRegistry.registerItem(itemSword_Bedrock, itemSword_Bedrock.getUnlocalizedName());
+        GameRegistry.registerItem(itemMace_Bedrock, itemMace_Bedrock.getUnlocalizedName());
         GameRegistry.registerItem(itemKnife_Bedrock, itemKnife_Bedrock.getUnlocalizedName());
         GameRegistry.registerItem(itemHammer_Bedrock, itemHammer_Bedrock.getUnlocalizedName());
-		GameRegistry.registerItem(oreChunk, oreChunk.getUnlocalizedName());
-		GameRegistry.registerItem(smallOreChunk, smallOreChunk.getUnlocalizedName());
-	}
+        GameRegistry.registerItem(ferroChromeIngot,ferroChromeIngot.getUnlocalizedName());
+        GameRegistry.registerItem(ferroChromeUnshaped,ferroChromeUnshaped.getUnlocalizedName());
+        GameRegistry.registerItem(oreChunk, oreChunk.getUnlocalizedName());
+        GameRegistry.registerItem(smallOreChunk, smallOreChunk.getUnlocalizedName());
+    }
+
+    public static void registerMetal()
+    {
+        TNCGlobals.FERROCHROME = new Metal("Ferrochrome", ferroChromeUnshaped, ferroChromeIngot);
+        MetalRegistry.instance.addMetal(TNCGlobals.FERROCHROME, Alloy.EnumTier.TierI);
+    }
 }

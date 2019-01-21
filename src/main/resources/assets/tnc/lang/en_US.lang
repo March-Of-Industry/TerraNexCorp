@@ -8,3 +8,7 @@ item.Ore.Poor Chromite.name=Poor Chromite
 item.Ore.Rich Chromite.name=Rich Chromite
 tile.Chromite Ore.Chromite.name=Chromite Ore
 item.Small Ore.Chromite.name=Chromite Sample
+item.Ferrochrome Ingot.name=Ferrochrome Ingot
+item.Ferrochrome Unshaped.name=Unshaped Ferrochrome
+gui.metal.Ferrochrome=Ferrochrome
+itemGroup.Terra-Nex-Corp=Terra-Nex-Corp
