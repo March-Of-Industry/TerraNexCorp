@@ -23,7 +23,7 @@ public class TNCConfig
     public static int bedMaceDamage = 1200;
     public static int bedKnifeDamage = 700;
     public static int bedHammerDamage = 900;
-
+	public static boolean enableNEIHiding = true;
 
 	private static Configuration oresConfig;
 
@@ -54,6 +54,7 @@ public class TNCConfig
         bedMaceDamage = config.getInt("Bedrock Mace Damage","Damage changing", 1200, 1, 5000, "Used to Change Bedrock Mace Damage ");
         bedKnifeDamage = config.getInt("Bedrock Knife Damage","Damage changing", 700, 1, 5000, "Used to Change Bedrock Knife Damage ");
         bedHammerDamage = config.getInt("Bedrock Hammer Damage","Damage changing", 900, 1, 5000, "Used to Change Bedrock Hammer Damage ");
+        enableNEIHiding = config.getBoolean("NEI Hiding","General",true,"Hide Internal Stuff from NEI");
 
         if(config.hasChanged())
             config.save();

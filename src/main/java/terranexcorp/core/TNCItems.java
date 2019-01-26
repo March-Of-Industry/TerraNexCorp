@@ -1,20 +1,16 @@
 package terranexcorp.core;
 
+import com.bioxx.tfc.Items.ItemMetalSheet;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraftforge.common.util.EnumHelper;
 import terranexcorp.core.TNCItems;
+import terranexcorp.items.*;
 import terranexcorp.items.tools.ItemNewSword;
 import terranexcorp.items.tools.ItemNewHammer;
 import terranexcorp.items.tools.ItemNewKnife;
-import terranexcorp.items.ItemTNCOre;
-import terranexcorp.items.ItemTNCIngot;
-import terranexcorp.items.ItemTNCMeltedMetal;
-import terranexcorp.items.ItemTNCMetalItem;
-import terranexcorp.items.ItemTNCDust;
 import terranexcorp.core.TNCDetails;
 import terranexcorp.core.TNCGlobals;
 import terranexcorp.items.ItemTNCOre;
-import terranexcorp.items.ItemTNCOreSmall;
 import net.minecraft.creativetab.CreativeTabs;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.item.Item;
@@ -40,6 +36,10 @@ public class TNCItems
 
     public static Item ferroChromeIngot;
     public static Item ferroChromeUnshaped;
+
+    public static Item stainlessSteelIngot;
+    public static Item stainlessSteelUnshaped;
+    public static Item stainlessSteelSheet;
 
     public static Item oreChunk;
     public static Item smallOreChunk;
@@ -80,6 +80,11 @@ public class TNCItems
 		ferroChromeIngot = new ItemTNCIngot("Ferrochrome",100).setUnlocalizedName("Ferrochrome Ingot");
 		ferroChromeUnshaped = new ItemTNCMeltedMetal().setUnlocalizedName("Ferrochrome Unshaped");
 
+        stainlessSteelIngot = new ItemTNCIngot("Stainless Steel",100).setUnlocalizedName("Stainless Steel Ingot");
+        stainlessSteelUnshaped = new ItemTNCMeltedMetal().setUnlocalizedName("Stainless Steel Unshaped");
+
+        //sheets
+        stainlessSteelSheet= new ItemTNCMetalSheet("Stainless Steel",0).setUnlocalizedName("Stainless Steel Sheet");
 		//ores
 		oreChunk = new ItemTNCOre().setFolder("ores/").setUnlocalizedName("Ore");
 		smallOreChunk = new ItemTNCOreSmall().setUnlocalizedName("Small Ore");
@@ -94,6 +99,9 @@ public class TNCItems
         GameRegistry.registerItem(itemHammer_Bedrock, itemHammer_Bedrock.getUnlocalizedName());
         GameRegistry.registerItem(ferroChromeIngot,ferroChromeIngot.getUnlocalizedName());
         GameRegistry.registerItem(ferroChromeUnshaped,ferroChromeUnshaped.getUnlocalizedName());
+        GameRegistry.registerItem(stainlessSteelIngot,stainlessSteelIngot.getUnlocalizedName());
+        GameRegistry.registerItem(stainlessSteelUnshaped,stainlessSteelUnshaped.getUnlocalizedName());
+        GameRegistry.registerItem(stainlessSteelSheet,stainlessSteelSheet.getUnlocalizedName());
         GameRegistry.registerItem(oreChunk, oreChunk.getUnlocalizedName());
         GameRegistry.registerItem(smallOreChunk, smallOreChunk.getUnlocalizedName());
     }
@@ -102,5 +110,7 @@ public class TNCItems
     {
         TNCGlobals.FERROCHROME = new Metal("Ferrochrome", ferroChromeUnshaped, ferroChromeIngot);
         MetalRegistry.instance.addMetal(TNCGlobals.FERROCHROME, Alloy.EnumTier.TierI);
+        TNCGlobals.STAINLESS_STEEL = new Metal("Stainless Steel", stainlessSteelUnshaped, stainlessSteelIngot);
+        MetalRegistry.instance.addMetal(TNCGlobals.STAINLESS_STEEL, Alloy.EnumTier.TierII);
     }
 }

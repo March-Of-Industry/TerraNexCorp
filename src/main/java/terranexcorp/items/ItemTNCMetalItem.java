@@ -63,7 +63,7 @@ public class ItemTNCMetalItem extends ItemTerra implements ISmeltable {
 
     @Override
     public void registerIcons(IIconRegister registerer) {
-        this.itemIcon = registerer.registerIcon(TNCDetails.ModID + ":" + this.getUnlocalizedName().replace("item.", ""));
+        this.itemIcon = registerer.registerIcon(TNCDetails.ModID + ":"+textureFolder+ this.getUnlocalizedName().replace("item.", ""));
     }
 
     @Override

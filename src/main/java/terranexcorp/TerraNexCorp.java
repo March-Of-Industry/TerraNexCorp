@@ -2,6 +2,7 @@ package terranexcorp;
 
 import java.io.File;
 
+import com.bioxx.tfc.CommonProxy;
 import net.minecraftforge.common.MinecraftForge;
 import com.bioxx.tfc.TerraFirmaCraft;
 
@@ -56,6 +57,7 @@ public class TerraNexCorp
 	@EventHandler
 	public void initialize(FMLInitializationEvent event)
 	{
+		proxy.hideNEIItems();
 	}
 
 	@EventHandler

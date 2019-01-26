@@ -18,6 +18,7 @@ public class ItemHeat {
         HeatRaw ferroChromeProcessingRaw = new HeatRaw(0.50, 2800);
         HeatRaw ferroChromeRaw = new HeatRaw(0.50, 1600);
 
+        HeatRaw stainlessSteelRaw = new HeatRaw(0.5,1420);
         //Chrome
         manager.addIndex(new HeatIndex(new ItemStack(TNCItems.ferroChromeIngot, 1), ferroChromeRaw, new ItemStack(TNCItems.ferroChromeUnshaped, 1)));
         manager.addIndex(new HeatIndex(new ItemStack(TNCItems.ferroChromeUnshaped, 1), ferroChromeRaw, new ItemStack(TNCItems.ferroChromeUnshaped, 1)));
@@ -25,6 +26,7 @@ public class ItemHeat {
         manager.addIndex(new HeatIndex(new ItemStack(TNCItems.oreChunk, 1, 1), ferroChromeProcessingRaw, new ItemStack(TNCItems.ferroChromeUnshaped, 1)));
         manager.addIndex(new HeatIndex(new ItemStack(TNCItems.oreChunk, 1, 2), ferroChromeProcessingRaw, new ItemStack(TNCItems.ferroChromeUnshaped, 1)));
         manager.addIndex(new HeatIndex(new ItemStack(TNCItems.smallOreChunk, 1, 0), ferroChromeProcessingRaw, new ItemStack(TNCItems.ferroChromeUnshaped, 1)));
+        manager.addIndex(new HeatIndex(new ItemStack(TNCItems.stainlessSteelIngot, 1, 0), stainlessSteelRaw, new ItemStack(TNCItems.stainlessSteelUnshaped, 1)));
     }
 
 }

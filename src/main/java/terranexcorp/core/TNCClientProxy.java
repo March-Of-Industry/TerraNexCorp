@@ -12,13 +12,10 @@ import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import terranexcorp.core.compat.NEICompat;
 
 public class TNCClientProxy extends TNCCommonProxy
 {
-
-
-
-
 
 	@Override
 	public String getCurrentLanguage()
@@ -31,6 +28,15 @@ public class TNCClientProxy extends TNCCommonProxy
 	{
 		return Minecraft.getMinecraft().theWorld;
 	}
+
+	@Override
+	public void hideNEIItems()
+	{
+		if (Loader.isModLoaded(TNCDetails.MODID_NEI)) {
+			NEICompat.hideNEIItems();
+		}
+	}
+
 
 	@Override
 	public boolean getGraphicsLevel()

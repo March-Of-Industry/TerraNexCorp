@@ -34,6 +34,8 @@ public class TNCCommonProxy
 		return MinecraftServer.getServer().getEntityWorld();
 	}
 
+	public void hideNEIItems() {}
+
 	public boolean getGraphicsLevel()
 	{
 		return false;

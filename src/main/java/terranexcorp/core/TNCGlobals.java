@@ -6,5 +6,6 @@ public class TNCGlobals
 {
 	public static final String[] ORE_METAL = {"Chromite"};
 	public static Metal FERROCHROME;
+	public static Metal STAINLESS_STEEL;
 
 }
