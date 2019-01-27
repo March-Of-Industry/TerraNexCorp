@@ -37,7 +37,7 @@ public class ItemTNCOreSmall extends ItemTNCOre
     public void registerIcons(IIconRegister registerer)
     {
         metaIcons = new IIcon[1];
-        metaIcons[0] = registerer.registerIcon(TNCDetails.ModID + ":ores/" + metaNames[0] + " Small Ore");
+        metaIcons[0] = registerer.registerIcon(TNCDetails.ModID + ":ores/" + metaNames[0] + "_Small_Ore");
     }
 
     @Override

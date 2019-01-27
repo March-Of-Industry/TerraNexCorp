@@ -49,7 +49,7 @@ public class BlockChromite extends BlockOre
     public void registerBlockIcons(IIconRegister iconRegisterer)
     {
         for(int i = 0; i < blockNames.length; i++)
-            icons[i] = iconRegisterer.registerIcon(TNCDetails.ModID + ":ores/"+ blockNames[i] + " Ore");
+            icons[i] = iconRegisterer.registerIcon(TNCDetails.ModID + ":ores/"+ blockNames[i] + "_Ore");
     }
 
     @Override

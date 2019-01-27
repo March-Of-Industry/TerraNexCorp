@@ -28,8 +28,8 @@ public class TNCBlocks
 
 	public static void setupBlocks()
 	{
-		blockChromite = new BlockChromite(Material.rock).setHardness(10F).setResistance(10F).setBlockName("Chromite Ore");
-		metalSheetTNC = new BlockTNCMetalSheet().setBlockName("Metal Sheet");
+		blockChromite = new BlockChromite(Material.rock).setHardness(10F).setResistance(10F).setBlockName("Chromite_Ore");
+		metalSheetTNC = new BlockTNCMetalSheet().setBlockName("Metal_Sheet");
 	}
 
 

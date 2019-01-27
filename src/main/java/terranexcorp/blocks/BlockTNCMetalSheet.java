@@ -10,7 +10,7 @@ import terranexcorp.core.TNCTextures;
 public class BlockTNCMetalSheet extends BlockMetalSheet
 {
     //public IIcon[] icons;
-    public String[]  metalNames = {"Stainless Steel"};
+    public String[]  metalNames = {"Stainless_Steel"};
 
     public BlockTNCMetalSheet()
     {

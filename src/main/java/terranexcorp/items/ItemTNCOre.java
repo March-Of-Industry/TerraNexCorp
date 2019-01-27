@@ -15,7 +15,7 @@ public class ItemTNCOre extends ItemOre
 	public ItemTNCOre()
 	{
 		super();
-		metaNames = new String[] {"Chromite", "Rich Chromite", "Poor Chromite"};
+		metaNames = new String[] {"Chromite", "Rich_Chromite", "Poor_Chromite"};
 		setCreativeTab(TNCTab.TNC_TAB);
 	}
 
@@ -24,7 +24,7 @@ public class ItemTNCOre extends ItemOre
 	{
 		metaIcons = new IIcon[metaNames.length];
 		for(int i = 0; i < metaNames.length; i++)
-			metaIcons[i] = registerer.registerIcon(TNCDetails.ModID + ":ores/"  + metaNames[i] + " Ore");
+			metaIcons[i] = registerer.registerIcon(TNCDetails.ModID + ":ores/"  + metaNames[i] + "_Ore");
 	}
 
 	@Override

@@ -77,17 +77,17 @@ public class TNCItems
 		itemHammer_Bedrock = new ItemNewHammer(BedrockToolMaterial,TNCConfig.bedHammerDamage).setUnlocalizedName("Hammer_Bedrock").setMaxDamage(BedrockUses);
 
 		//ingots
-		ferroChromeIngot = new ItemTNCIngot("Ferrochrome",100).setUnlocalizedName("Ferrochrome Ingot");
-		ferroChromeUnshaped = new ItemTNCMeltedMetal().setUnlocalizedName("Ferrochrome Unshaped");
+		ferroChromeIngot = new ItemTNCIngot("Ferrochrome",100).setUnlocalizedName("Ferrochrome_Ingot");
+		ferroChromeUnshaped = new ItemTNCMeltedMetal().setUnlocalizedName("Ferrochrome_Unshaped");
 
-        stainlessSteelIngot = new ItemTNCIngot("Stainless Steel",100).setUnlocalizedName("Stainless Steel Ingot");
-        stainlessSteelUnshaped = new ItemTNCMeltedMetal().setUnlocalizedName("Stainless Steel Unshaped");
+        stainlessSteelIngot = new ItemTNCIngot("Stainless Steel",100).setUnlocalizedName("Stainless_Steel_Ingot");
+        stainlessSteelUnshaped = new ItemTNCMeltedMetal().setUnlocalizedName("Stainless_Steel_Unshaped");
 
         //sheets
-        stainlessSteelSheet= new ItemTNCMetalSheet("Stainless Steel",0).setUnlocalizedName("Stainless Steel Sheet");
+        stainlessSteelSheet= new ItemTNCMetalSheet("Stainless Steel",0).setUnlocalizedName("Stainless_Steel_Sheet");
 		//ores
 		oreChunk = new ItemTNCOre().setFolder("ores/").setUnlocalizedName("Ore");
-		smallOreChunk = new ItemTNCOreSmall().setUnlocalizedName("Small Ore");
+		smallOreChunk = new ItemTNCOreSmall().setUnlocalizedName("Small_Ore");
 	}
 
     public static void registerItems()
