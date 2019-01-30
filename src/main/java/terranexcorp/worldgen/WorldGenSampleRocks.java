@@ -1,5 +1,6 @@
 package terranexcorp.worldgen;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 import net.minecraft.block.material.Material;
@@ -8,19 +9,18 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
-import terranexcorp.blocks.BlockChromite;
-import terranexcorp.core.TNCBlocks;
-import terranexcorp.core.TNCItems;
+import terranexcorp.blocks.BlockTNCOre;
 
 import com.bioxx.tfc.TileEntities.TEWorldItem;
 import com.bioxx.tfc.WorldGen.TFCBiome;
 import com.bioxx.tfc.api.TFCBlocks;
 
 import cpw.mods.fml.common.IWorldGenerator;
+import terranexcorp.core.TNCBlocks;
 
-public class WorldGenChromiteRocks implements IWorldGenerator {
+public class WorldGenSampleRocks implements IWorldGenerator {
 
-    public WorldGenChromiteRocks() {
+    public WorldGenSampleRocks() {
     }
 
     private boolean generateRocks(World world, Random random, int i, int j, int k) {
@@ -41,22 +41,24 @@ public class WorldGenChromiteRocks implements IWorldGenerator {
     }
 
     private ItemStack getCoreSample(World world, int xCoord, int yCoord, int zCoord) {
-
-        ItemStack is = null;
-        int x1 = (xCoord >> 4) << 4;
-        int z1 = (zCoord >> 4) << 4;
-        for (int x = 0; x <= 15; x++) {
-            for (int z = 0; z <= 15; z++) {
+        ArrayList<Item> coreSample = new ArrayList<Item>();
+        ArrayList<ItemStack> coreSampleStacks = new ArrayList<ItemStack>();
+        for (int x = -15; x < 16; x++) {
+            for (int z = -15; z < 16; z++) {
                 for (int y = yCoord; y > yCoord - 35; y--) {
-                    if (world.getBlock(x1 + x, y, z1 + z) == TNCBlocks.blockChromite) {
-                        int m = world.getBlockMetadata(x1 + x, y, z1 + z);
-                        is = new ItemStack(TNCItems.smallOreChunk, 1, m);
-                        return is;
+                    if (world.blockExists(xCoord + x, y, zCoord + z) && world.getBlock(xCoord + x, y, zCoord + z) == TNCBlocks.blockOre) {
+                        int m = world.getBlockMetadata(xCoord + x, y, zCoord + z);
+                        if (!coreSample.contains(BlockTNCOre.getDroppedItemMod(m))) {
+                            coreSample.add(BlockTNCOre.getDroppedItemMod(m));
+                            coreSampleStacks.add(new ItemStack(BlockTNCOre.getDroppedItemMod(m), 1, m));
+                        }
                     }
                 }
             }
         }
-        return is;
+        if (!coreSampleStacks.isEmpty())
+            return coreSampleStacks.get(world.rand.nextInt(coreSampleStacks.size()));
+        return null;
     }
 
     @Override

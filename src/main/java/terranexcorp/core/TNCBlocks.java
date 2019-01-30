@@ -1,8 +1,6 @@
 package terranexcorp.core;
 
-
-
-import terranexcorp.blocks.BlockChromite;
+import terranexcorp.blocks.BlockTNCOre;
 import terranexcorp.blocks.BlockTNCMetalSheet;
 import terranexcorp.items.ItemBlocks.ItemModOreBlock;
 
@@ -13,7 +11,7 @@ import net.minecraft.block.material.Material;
 public class TNCBlocks
 {
 
-	public static Block blockChromite;
+	public static Block blockOre;
 	public static Block metalSheetTNC;
 
 
@@ -23,19 +21,16 @@ public class TNCBlocks
 		registerBlocks();
 	}
 
-
-
-
 	public static void setupBlocks()
 	{
-		blockChromite = new BlockChromite(Material.rock).setHardness(10F).setResistance(10F).setBlockName("Chromite_Ore");
+		blockOre = new BlockTNCOre(Material.rock){}.setHardness(10F).setResistance(10F).setBlockName("Ore");
 		metalSheetTNC = new BlockTNCMetalSheet().setBlockName("Metal_Sheet");
 	}
 
 
 	public static void registerBlocks()
 	{
-		GameRegistry.registerBlock(blockChromite, ItemModOreBlock.class, "OreChromite");
+		GameRegistry.registerBlock(blockOre,ItemModOreBlock.class ,"Ore");
 		GameRegistry.registerBlock(metalSheetTNC, "metalSheet");
 	}
 }

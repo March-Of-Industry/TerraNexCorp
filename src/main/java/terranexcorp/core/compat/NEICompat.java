@@ -11,7 +11,7 @@ public class NEICompat
     {
         if (TNCConfig.enableNEIHiding)
         {
-            API.hideItem(new ItemStack(TNCBlocks.blockChromite));
+            API.hideItem(new ItemStack(TNCBlocks.blockOre));
             API.hideItem(new ItemStack(TNCBlocks.metalSheetTNC));
         }
     }

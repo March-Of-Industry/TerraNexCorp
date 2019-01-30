@@ -36,10 +36,15 @@ public class TNCItems
 
     public static Item ferroChromeIngot;
     public static Item ferroChromeUnshaped;
+    public static Item ferroChromeSheet;
 
     public static Item stainlessSteelIngot;
     public static Item stainlessSteelUnshaped;
     public static Item stainlessSteelSheet;
+
+    public static Item titaniumIngot;
+    public static Item titaniumUnshaped;
+    public static Item titaniumSheet;
 
     public static Item oreChunk;
     public static Item smallOreChunk;
@@ -83,8 +88,12 @@ public class TNCItems
         stainlessSteelIngot = new ItemTNCIngot("Stainless Steel",100).setUnlocalizedName("Stainless_Steel_Ingot");
         stainlessSteelUnshaped = new ItemTNCMeltedMetal().setUnlocalizedName("Stainless_Steel_Unshaped");
 
+        titaniumIngot = new ItemTNCIngot("Titanium",100).setUnlocalizedName("Titanium_Ingot");
+        titaniumUnshaped = new ItemTNCMeltedMetal().setUnlocalizedName("Titanium_Unshaped");
         //sheets
-        stainlessSteelSheet= new ItemTNCMetalSheet("Stainless Steel",0).setUnlocalizedName("Stainless_Steel_Sheet");
+        ferroChromeSheet= new ItemTNCMetalSheet("Ferrochrome",0).setUnlocalizedName("Ferrochrome_Sheet");
+        stainlessSteelSheet= new ItemTNCMetalSheet("Stainless Steel",1).setUnlocalizedName("Stainless_Steel_Sheet");
+        titaniumSheet= new ItemTNCMetalSheet("Titanium",2).setUnlocalizedName("Titanium_Sheet");
 		//ores
 		oreChunk = new ItemTNCOre().setFolder("ores/").setUnlocalizedName("Ore");
 		smallOreChunk = new ItemTNCOreSmall().setUnlocalizedName("Small_Ore");
@@ -97,11 +106,19 @@ public class TNCItems
         GameRegistry.registerItem(itemMace_Bedrock, itemMace_Bedrock.getUnlocalizedName());
         GameRegistry.registerItem(itemKnife_Bedrock, itemKnife_Bedrock.getUnlocalizedName());
         GameRegistry.registerItem(itemHammer_Bedrock, itemHammer_Bedrock.getUnlocalizedName());
+
         GameRegistry.registerItem(ferroChromeIngot,ferroChromeIngot.getUnlocalizedName());
         GameRegistry.registerItem(ferroChromeUnshaped,ferroChromeUnshaped.getUnlocalizedName());
+        GameRegistry.registerItem(ferroChromeSheet,ferroChromeSheet.getUnlocalizedName());
+
         GameRegistry.registerItem(stainlessSteelIngot,stainlessSteelIngot.getUnlocalizedName());
         GameRegistry.registerItem(stainlessSteelUnshaped,stainlessSteelUnshaped.getUnlocalizedName());
         GameRegistry.registerItem(stainlessSteelSheet,stainlessSteelSheet.getUnlocalizedName());
+
+        GameRegistry.registerItem(titaniumIngot,titaniumIngot.getUnlocalizedName());
+        GameRegistry.registerItem(titaniumUnshaped,titaniumUnshaped.getUnlocalizedName());
+        GameRegistry.registerItem(titaniumSheet,titaniumSheet.getUnlocalizedName());
+
         GameRegistry.registerItem(oreChunk, oreChunk.getUnlocalizedName());
         GameRegistry.registerItem(smallOreChunk, smallOreChunk.getUnlocalizedName());
     }
@@ -112,5 +129,7 @@ public class TNCItems
         MetalRegistry.instance.addMetal(TNCGlobals.FERROCHROME, Alloy.EnumTier.TierI);
         TNCGlobals.STAINLESS_STEEL = new Metal("Stainless Steel", stainlessSteelUnshaped, stainlessSteelIngot);
         MetalRegistry.instance.addMetal(TNCGlobals.STAINLESS_STEEL, Alloy.EnumTier.TierII);
+        TNCGlobals.TITANIUM = new Metal("Titanium", titaniumUnshaped, titaniumIngot);
+        MetalRegistry.instance.addMetal(TNCGlobals.TITANIUM, Alloy.EnumTier.TierI);
     }
 }

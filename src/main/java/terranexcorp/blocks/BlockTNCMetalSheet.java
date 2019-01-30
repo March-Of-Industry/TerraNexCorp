@@ -9,8 +9,7 @@ import terranexcorp.core.TNCTextures;
 
 public class BlockTNCMetalSheet extends BlockMetalSheet
 {
-    //public IIcon[] icons;
-    public String[]  metalNames = {"Stainless_Steel"};
+    public String[]  metalNames = {"Ferrochrome","Stainless_Steel","Titanium"};
 
     public BlockTNCMetalSheet()
     {
@@ -25,9 +24,12 @@ public class BlockTNCMetalSheet extends BlockMetalSheet
     public void registerBlockIcons(IIconRegister registerer)
     {
         for(int i = 0; i < icons.length; i++)
-            icons[i] = registerer.registerIcon(TNCDetails.ModID + ":" + "metal/"+metalNames[i]);
-
-        TNCTextures.sheetStainlessSteel = icons[0];
+        {
+            icons[i] = registerer.registerIcon(TNCDetails.ModID + ":" + "metal/" + metalNames[i]);
+        }
+        TNCTextures.sheetFerrochrome = icons[0];
+        TNCTextures.sheetStainlessSteel = icons[1];
+        TNCTextures.sheetTitanium = icons[2];
 
     }
 }

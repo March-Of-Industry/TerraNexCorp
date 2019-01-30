@@ -21,34 +21,49 @@ public class ItemTNCOreSmall extends ItemTNCOre
     public ItemTNCOreSmall()
     {
         super();
+        setHasSubtypes(true);
         this.setWeight(EnumWeight.HEAVY);
         this.setSize(EnumSize.TINY);
-        setCreativeTab(TNCTab.TNC_TAB);
+        metaNames = new String[]{"Chromite","Ilmenite","Rutile"};
+
     }
 
-    @SuppressWarnings({"unchecked", "rawtypes"})
+
     @Override
     public void getSubItems(Item item, CreativeTabs tabs, List list)
     {
-        list.add(new ItemStack(this, 1, 0));
+        for(int i = 0; i < metaNames.length; ++i)
+        {
+            list.add(new ItemStack(this, 1, i));
+        }
     }
 
     @Override
     public void registerIcons(IIconRegister registerer)
     {
-        metaIcons = new IIcon[1];
-        metaIcons[0] = registerer.registerIcon(TNCDetails.ModID + ":ores/" + metaNames[0] + "_Small_Ore");
+        metaIcons = new IIcon[(metaNames.length)];
+        for(int i = 0; i < (metaNames.length); i++)
+        {
+            metaIcons[i] = registerer.registerIcon(TNCDetails.ModID + ":ores/"+ metaNames[i] + "_Small_Ore");
+        }
     }
 
     @Override
     public short getMetalReturnAmount(ItemStack is)
     {
-        int dam = is.getItemDamage();
-        switch (dam)
+        return (short) TFCOptions.smallOreUnits;
+
+    }
+
+    @Override
+    public EnumTier getSmeltTier(ItemStack is)
+    {
+        switch (is.getItemDamage())
         {
-            case 0:
-                return (short) TFCOptions.smallOreUnits;
+            case 0: return EnumTier.TierIV;
+            case 1:	return EnumTier.TierIV;
+            case 2: return EnumTier.TierIV;
+            default: return EnumTier.TierX;
         }
-        return 0;
     }
 }

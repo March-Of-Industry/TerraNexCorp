@@ -2,18 +2,13 @@ package terranexcorp;
 
 import java.io.File;
 
-import com.bioxx.tfc.CommonProxy;
-import net.minecraftforge.common.MinecraftForge;
-import com.bioxx.tfc.TerraFirmaCraft;
-
-import terranexcorp.core.TNCClientProxy;
 import terranexcorp.core.TNCCommonProxy;
 import terranexcorp.core.TNCDetails;
 import terranexcorp.core.TNCItems;
 import terranexcorp.core.TNCBlocks;
 import terranexcorp.core.TNCConfig;
 import terranexcorp.items.ItemHeat;
-import terranexcorp.worldgen.WorldGenChromiteRocks;
+import terranexcorp.worldgen.WorldGenSampleRocks;
 
 
 import cpw.mods.fml.common.FMLCommonHandler;
@@ -46,12 +41,10 @@ public class TerraNexCorp
 		instance = this;
 		TNCConfig.init(event.getSuggestedConfigurationFile());
 		FMLCommonHandler.instance().bus().register(new TNCConfig());
-
-
 		TNCItems.init();
 		TNCBlocks.init();
 		ItemHeat.setupItemHeat();
-		GameRegistry.registerWorldGenerator(new WorldGenChromiteRocks(), 5);
+		GameRegistry.registerWorldGenerator(new WorldGenSampleRocks(), 5);
 	}
 
 	@EventHandler

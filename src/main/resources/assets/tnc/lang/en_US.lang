@@ -3,16 +3,40 @@ item.Mace_Bedrock.name=Bedrock Mace
 item.Knife_Bedrock.name=Bedrock Knife
 item.Hammer_Bedrock.name=Bedrock Hammer
 item.Handle_HSLA.name=HSLA Handle
+
 item.Ore.Chromite.name=Chromite
 item.Ore.Poor_Chromite.name=Poor Chromite
 item.Ore.Rich_Chromite.name=Rich Chromite
-tile.Chromite_Ore.Chromite.name=Chromite Ore
+tile.Ore.Chromite.name=Chromite Ore
 item.Small_Ore.Chromite.name=Chromite Sample
+
+item.Ore.Ilmenite.name=Ilmenite
+item.Ore.Poor_Ilmenite.name=Poor Ilmenite
+item.Ore.Rich_Ilmenite.name=Rich Ilmenite
+tile.Ore.Ilmenite.name=Ilmenite Ore
+item.Small_Ore.Ilmenite.name=Ilmenite Sample
+
+item.Ore.Rutile.name=Rutile
+item.Ore.Poor_Rutile.name=Poor Rutile
+item.Ore.Rich_Rutile.name=Rich Rutile
+tile.Ore.Rutile.name=Rutile Ore
+item.Small_Ore.Rutile.name=Rutile Sample
+
 item.Ferrochrome_Ingot.name=Ferrochrome Ingot
 item.Ferrochrome_Unshaped.name=Unshaped Ferrochrome
+item.Ferrochrome_Sheet.name=Ferrochrome Sheet
+
 item.Stainless_Steel_Unshaped.name=Unshaped Stainless Steel
 item.Stainless_Steel_Ingot.name=Stainless Steel Ingot
 item.Stainless_Steel_Sheet.name=Stainless Steel Sheet
+
+item.Titanium_Unshaped.name=Unshaped Titanium
+item.Titanium_Ingot.name=Titanium Ingot
+item.Titanium_Sheet.name=Titanium Sheet
+
 gui.metal.Ferrochrome=Ferrochrome
+gui.metal.Stainless Steel=Stainless Steel
+gui.metal.Titanium=Titanium
+
 itemGroup.Terra-Nex-Corp=Terra-Nex-Corp
 tile.Metal_Sheet.name=Metal Sheet

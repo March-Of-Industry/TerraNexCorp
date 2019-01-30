@@ -62,7 +62,9 @@ public class TNCConfig
 
 
 	public static void reloadOres() {
-		oreList.put("Chromite", getOreData("Chromite", "default", "medium", TNCDetails.ModID + ":OreChromite", 0, 180, new String[] {"gabbro", "basalt"}, 5, 128, 80, 60));
+		oreList.put("Chromite", getOreData("Chromite", "default", "medium", TNCDetails.ModID + ":Ore", 0, 180, new String[] {"gabbro", "basalt"}, 5, 128, 80, 60));
+		oreList.put("Ilumite", getOreData("Ilumite", "default", "medium", TNCDetails.ModID + ":Ore", 1, 180, new String[] {"gabbro", "basalt"}, 5, 128, 80, 60));
+		oreList.put("Rutile", getOreData("Rutile", "default", "medium", TNCDetails.ModID + ":Ore", 2, 180, new String[] {"gabbro", "basalt"}, 5, 128, 80, 60));
 
 		// getCategoryNames returns an ImmutableSet
 		for (String s : oresConfig.getCategoryNames()) {

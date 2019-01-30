@@ -15,7 +15,14 @@ public class ItemTNCOre extends ItemOre
 	public ItemTNCOre()
 	{
 		super();
-		metaNames = new String[] {"Chromite", "Rich_Chromite", "Poor_Chromite"};
+		setHasSubtypes(true);
+		metaNames = new String[] {"Chromite","Ilmenite","Rutile",
+
+								   "Rich_Chromite","Rich_Ilmenite","Rich_Rutile",
+
+								   "Poor_Chromite","Poor_Ilmenite", "Poor_Rutile"
+
+								   };
 		setCreativeTab(TNCTab.TNC_TAB);
 	}
 
@@ -32,7 +39,15 @@ public class ItemTNCOre extends ItemOre
 	{
 		switch(is.getItemDamage())
 		{
-			case 0: case 1: case 2: return TNCGlobals.FERROCHROME;
+			case 0: return TNCGlobals.FERROCHROME;
+			case 1:	return TNCGlobals.TITANIUM;
+			case 2: return TNCGlobals.TITANIUM;
+			case 3: return TNCGlobals.FERROCHROME;
+			case 4: return TNCGlobals.TITANIUM;
+			case 5: return TNCGlobals.TITANIUM;
+			case 6: return TNCGlobals.FERROCHROME;
+			case 7: return TNCGlobals.TITANIUM;
+			case 8: return TNCGlobals.TITANIUM;
 			default: return null;
 		}
 	}
@@ -42,9 +57,15 @@ public class ItemTNCOre extends ItemOre
 	{
 		switch (is.getItemDamage())
 		{
-			case 0: return (short) TFCOptions.normalOreUnits;
-			case 1: return (short) TFCOptions.richOreUnits;
-			case 2: return (short) TFCOptions.poorOreUnits;
+			case 0:
+			case 1:
+			case 2: return (short) TFCOptions.normalOreUnits;
+			case 3:
+			case 4:
+			case 5: return (short) TFCOptions.richOreUnits;
+			case 6:
+			case 7:
+			case 8: return (short) TFCOptions.poorOreUnits;
 			default: return 0;
 		}
 	}
@@ -52,11 +73,7 @@ public class ItemTNCOre extends ItemOre
 	@Override
 	public boolean isSmeltable(ItemStack is)
 	{
-		switch (is.getItemDamage())
-		{
-			case 0: case 1: case 2: return true;
-			default: return false;
-		}
+		return true;
 	}
 
 	@Override
@@ -64,7 +81,15 @@ public class ItemTNCOre extends ItemOre
 	{
 		switch (is.getItemDamage())
 		{
-			case 0: case 1: case 2: return EnumTier.TierI;
+			case 0: return EnumTier.TierIV;
+			case 1:	return EnumTier.TierIV;
+			case 2: return EnumTier.TierIV;
+			case 3: return EnumTier.TierIV;
+			case 4: return EnumTier.TierIV;
+			case 5: return EnumTier.TierIV;
+			case 6: return EnumTier.TierIV;
+			case 7: return EnumTier.TierIV;
+			case 8: return EnumTier.TierIV;
 			default: return EnumTier.TierX;
 		}
 	}

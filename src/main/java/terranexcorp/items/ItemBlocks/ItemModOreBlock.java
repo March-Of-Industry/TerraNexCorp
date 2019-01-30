@@ -9,7 +9,8 @@ public class ItemModOreBlock extends ItemTerraBlock {
 
     public ItemModOreBlock(Block b) {
         super(b);
-        metaNames = TNCGlobals.ORE_METAL;
+        metaNames = new String[TNCGlobals.MOD_ORE_METAL.length];
+        System.arraycopy(TNCGlobals.MOD_ORE_METAL, 0, metaNames, 0, TNCGlobals.MOD_ORE_METAL.length);
     }
 
 }
