@@ -35,7 +35,7 @@ item.Titanium_Ingot.name=Titanium Ingot
 item.Titanium_Sheet.name=Titanium Sheet
 
 gui.metal.Ferrochrome=Ferrochrome
-gui.metal.Stainless Steel=Stainless Steel
+gui.metal.StainlessSteel=Stainless Steel
 gui.metal.Titanium=Titanium
 
 itemGroup.Terra-Nex-Corp=Terra-Nex-Corp
