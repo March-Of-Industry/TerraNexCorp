@@ -1,13 +1,19 @@
 package terranexcorp;
 
 import java.io.File;
+import java.util.Map;
 
+import blusunrize.immersiveengineering.api.energy.DieselHandler;
+import net.minecraftforge.fluids.Fluid;
+import net.minecraftforge.fluids.FluidRegistry;
+import org.lwjgl.Sys;
 import terranexcorp.core.TNCCommonProxy;
 import terranexcorp.core.TNCDetails;
 import terranexcorp.core.TNCItems;
 import terranexcorp.core.TNCBlocks;
 import terranexcorp.core.TNCConfig;
 import terranexcorp.items.ItemHeat;
+import terranexcorp.minetweaker.TNCminetweaker;
 import terranexcorp.worldgen.WorldGenSampleRocks;
 
 
@@ -45,17 +51,20 @@ public class TerraNexCorp
 		TNCBlocks.init();
 		ItemHeat.setupItemHeat();
 		GameRegistry.registerWorldGenerator(new WorldGenSampleRocks(), 5);
+		Fluid fluidWater = FluidRegistry.getFluid("water");
 	}
 
 	@EventHandler
 	public void initialize(FMLInitializationEvent event)
 	{
 		proxy.hideNEIItems();
+
 	}
 
 	@EventHandler
 	public void postInitialize(FMLPostInitializationEvent event)
 	{
+		TNCminetweaker.postInit();
 		TNCConfig.reloadOres();
 	}
 }

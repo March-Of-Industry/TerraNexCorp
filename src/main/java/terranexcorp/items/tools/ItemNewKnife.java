@@ -5,6 +5,7 @@ import net.minecraft.client.renderer.texture.IIconRegister;
 import com.bioxx.tfc.Items.Tools.ItemKnife;
 import com.bioxx.tfc.api.Enums.EnumDamageType;
 import net.minecraft.item.Item.ToolMaterial;
+import net.minecraft.item.ItemStack;
 import terranexcorp.core.TNCDetails;
 import terranexcorp.core.TNCTab;
 public class ItemNewKnife extends ItemKnife

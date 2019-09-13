@@ -4,7 +4,7 @@ public class TNCDetails
 {
 	public static final String ModID = "tnc";
 	public static final String ModName = "Terra-Nex-Corp";
-    public static final String ModVersion = "0.0.11";
+    public static final String ModVersion = "0.0.13";
 
 	public static final String ModChannel = "Terra-Nex-Corp";
 	public static final String SERVER_PROXY_CLASS = "terranexcorp.core.TNCCommonProxy";

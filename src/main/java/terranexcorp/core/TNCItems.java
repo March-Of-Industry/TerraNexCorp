@@ -35,14 +35,17 @@ public class TNCItems
     public static Item itemHammer_Bedrock;
 
     public static Item ferroChromeIngot;
+    public static Item ferroChromeDoubleIngot;
     public static Item ferroChromeUnshaped;
     public static Item ferroChromeSheet;
 
     public static Item stainlessSteelIngot;
+    public static Item stainlessSteelDoubleIngot;
     public static Item stainlessSteelUnshaped;
     public static Item stainlessSteelSheet;
 
     public static Item titaniumIngot;
+    public static Item titaniumDoubleIngot;
     public static Item titaniumUnshaped;
     public static Item titaniumSheet;
 
@@ -83,12 +86,15 @@ public class TNCItems
 
 		//ingots
 		ferroChromeIngot = new ItemTNCIngot("Ferrochrome",100).setUnlocalizedName("Ferrochrome_Ingot");
+		ferroChromeDoubleIngot = new ItemTNCIngot("Ferrochrome",200).setUnlocalizedName("Ferrochrome_Double_Ingot");
 		ferroChromeUnshaped = new ItemTNCMeltedMetal().setUnlocalizedName("Ferrochrome_Unshaped");
 
         stainlessSteelIngot = new ItemTNCIngot("Stainless Steel",100).setUnlocalizedName("Stainless_Steel_Ingot");
+        stainlessSteelDoubleIngot = new ItemTNCIngot("Stainless Steel",200).setUnlocalizedName("Stainless_Steel_Double_Ingot");
         stainlessSteelUnshaped = new ItemTNCMeltedMetal().setUnlocalizedName("Stainless_Steel_Unshaped");
 
         titaniumIngot = new ItemTNCIngot("Titanium",100).setUnlocalizedName("Titanium_Ingot");
+        titaniumDoubleIngot = new ItemTNCIngot("Titanium",200).setUnlocalizedName("Titanium_Double_Ingot");
         titaniumUnshaped = new ItemTNCMeltedMetal().setUnlocalizedName("Titanium_Unshaped");
         //sheets
         ferroChromeSheet= new ItemTNCMetalSheet("Ferrochrome",0).setUnlocalizedName("Ferrochrome_Sheet");
@@ -108,14 +114,17 @@ public class TNCItems
         GameRegistry.registerItem(itemHammer_Bedrock, itemHammer_Bedrock.getUnlocalizedName());
 
         GameRegistry.registerItem(ferroChromeIngot,ferroChromeIngot.getUnlocalizedName());
+        GameRegistry.registerItem(ferroChromeDoubleIngot,ferroChromeDoubleIngot.getUnlocalizedName());
         GameRegistry.registerItem(ferroChromeUnshaped,ferroChromeUnshaped.getUnlocalizedName());
         GameRegistry.registerItem(ferroChromeSheet,ferroChromeSheet.getUnlocalizedName());
 
         GameRegistry.registerItem(stainlessSteelIngot,stainlessSteelIngot.getUnlocalizedName());
+        GameRegistry.registerItem(stainlessSteelDoubleIngot,stainlessSteelDoubleIngot.getUnlocalizedName());
         GameRegistry.registerItem(stainlessSteelUnshaped,stainlessSteelUnshaped.getUnlocalizedName());
         GameRegistry.registerItem(stainlessSteelSheet,stainlessSteelSheet.getUnlocalizedName());
 
         GameRegistry.registerItem(titaniumIngot,titaniumIngot.getUnlocalizedName());
+        GameRegistry.registerItem(titaniumDoubleIngot,titaniumDoubleIngot.getUnlocalizedName());
         GameRegistry.registerItem(titaniumUnshaped,titaniumUnshaped.getUnlocalizedName());
         GameRegistry.registerItem(titaniumSheet,titaniumSheet.getUnlocalizedName());
 

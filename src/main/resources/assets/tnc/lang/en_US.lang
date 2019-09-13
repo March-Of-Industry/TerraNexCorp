@@ -23,15 +23,18 @@ tile.Ore.Rutile.name=Rutile Ore
 item.Small_Ore.Rutile.name=Rutile Sample
 
 item.Ferrochrome_Ingot.name=Ferrochrome Ingot
+item.Ferrochrome_Double_Ingot.name=Ferrochrome Double Ingot
 item.Ferrochrome_Unshaped.name=Unshaped Ferrochrome
 item.Ferrochrome_Sheet.name=Ferrochrome Sheet
 
 item.Stainless_Steel_Unshaped.name=Unshaped Stainless Steel
 item.Stainless_Steel_Ingot.name=Stainless Steel Ingot
+item.Stainless_Steel_Double_Ingot.name=Stainless Steel Double Ingot
 item.Stainless_Steel_Sheet.name=Stainless Steel Sheet
 
 item.Titanium_Unshaped.name=Unshaped Titanium
 item.Titanium_Ingot.name=Titanium Ingot
+item.Titanium_Double_Ingot.name=Titanium Double Ingot
 item.Titanium_Sheet.name=Titanium Sheet
 
 gui.metal.Ferrochrome=Ferrochrome
