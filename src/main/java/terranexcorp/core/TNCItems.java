@@ -49,6 +49,17 @@ public class TNCItems
     public static Item titaniumUnshaped;
     public static Item titaniumSheet;
 
+    public static Item ferroManganeseIngot;
+    public static Item ferroManganeseDoubleIngot;
+    public static Item ferroManganeseUnshaped;
+    public static Item ferroManganeseSheet;
+
+    public static Item manganeseIngot;
+    public static Item manganeseDoubleIngot;
+    public static Item manganeseUnshaped;
+    public static Item manganeseSheet;
+
+
     public static Item oreChunk;
     public static Item smallOreChunk;
 
@@ -96,10 +107,22 @@ public class TNCItems
         titaniumIngot = new ItemTNCIngot("Titanium",100).setUnlocalizedName("Titanium_Ingot");
         titaniumDoubleIngot = new ItemTNCIngot("Titanium",200).setUnlocalizedName("Titanium_Double_Ingot");
         titaniumUnshaped = new ItemTNCMeltedMetal().setUnlocalizedName("Titanium_Unshaped");
+
+        ferroManganeseIngot = new ItemTNCIngot("Ferromanganese",100).setUnlocalizedName("Ferromanganese_Ingot");
+        ferroManganeseDoubleIngot = new ItemTNCIngot("Ferromanganese",200).setUnlocalizedName("Ferromanganese_Double_Ingot");
+        ferroManganeseUnshaped = new ItemTNCMeltedMetal().setUnlocalizedName("Ferromanganese_Unshaped");
+
+        manganeseIngot = new ItemTNCIngot("Manganese",100).setUnlocalizedName("Manganese_Ingot");
+        manganeseDoubleIngot = new ItemTNCIngot("Manganese",200).setUnlocalizedName("Manganese_Double_Ingot");
+        manganeseUnshaped = new ItemTNCMeltedMetal().setUnlocalizedName("Manganese_Unshaped");
+
+
         //sheets
         ferroChromeSheet= new ItemTNCMetalSheet("Ferrochrome",0).setUnlocalizedName("Ferrochrome_Sheet");
         stainlessSteelSheet= new ItemTNCMetalSheet("Stainless Steel",1).setUnlocalizedName("Stainless_Steel_Sheet");
         titaniumSheet= new ItemTNCMetalSheet("Titanium",2).setUnlocalizedName("Titanium_Sheet");
+        ferroManganeseSheet= new ItemTNCMetalSheet("Ferromanganese",3).setUnlocalizedName("Ferromanganese_Sheet");
+        manganeseSheet= new ItemTNCMetalSheet("Manganese",3).setUnlocalizedName("Manganese_Sheet");
 		//ores
 		oreChunk = new ItemTNCOre().setFolder("ores/").setUnlocalizedName("Ore");
 		smallOreChunk = new ItemTNCOreSmall().setUnlocalizedName("Small_Ore");

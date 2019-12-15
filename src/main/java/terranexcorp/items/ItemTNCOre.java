@@ -16,11 +16,11 @@ public class ItemTNCOre extends ItemOre
 	{
 		super();
 		setHasSubtypes(true);
-		metaNames = new String[] {"Chromite","Ilmenite","Rutile",
+		metaNames = new String[] {"Chromite","Ilmenite","Rutile","Pyrolusite",
 
-								   "Rich_Chromite","Rich_Ilmenite","Rich_Rutile",
+								   "Rich_Chromite","Rich_Ilmenite","Rich_Rutile","Rich_Pyrolusite",
 
-								   "Poor_Chromite","Poor_Ilmenite", "Poor_Rutile"
+								   "Poor_Chromite","Poor_Ilmenite", "Poor_Rutile","Poor_Pyrolusite",
 
 								   };
 		setCreativeTab(TNCTab.TNC_TAB);
@@ -42,12 +42,15 @@ public class ItemTNCOre extends ItemOre
 			case 0: return TNCGlobals.FERROCHROME;
 			case 1:	return TNCGlobals.TITANIUM;
 			case 2: return TNCGlobals.TITANIUM;
-			case 3: return TNCGlobals.FERROCHROME;
-			case 4: return TNCGlobals.TITANIUM;
+			case 3: return TNCGlobals.FERROMANGANESE;
+			case 4: return TNCGlobals.FERROCHROME;
 			case 5: return TNCGlobals.TITANIUM;
-			case 6: return TNCGlobals.FERROCHROME;
-			case 7: return TNCGlobals.TITANIUM;
-			case 8: return TNCGlobals.TITANIUM;
+			case 6: return TNCGlobals.TITANIUM;
+			case 7: return TNCGlobals.FERROMANGANESE;
+			case 8: return TNCGlobals.FERROCHROME;
+			case 9: return TNCGlobals.TITANIUM;
+			case 10: return TNCGlobals.TITANIUM;
+			case 11: return TNCGlobals.FERROMANGANESE;
 			default: return null;
 		}
 	}
@@ -59,13 +62,16 @@ public class ItemTNCOre extends ItemOre
 		{
 			case 0:
 			case 1:
-			case 2: return (short) TFCOptions.normalOreUnits;
-			case 3:
+			case 2:
+			case 3: return (short) TFCOptions.normalOreUnits;
 			case 4:
-			case 5: return (short) TFCOptions.richOreUnits;
+			case 5:
 			case 6:
-			case 7:
-			case 8: return (short) TFCOptions.poorOreUnits;
+			case 7:return (short) TFCOptions.richOreUnits;
+			case 8:
+			case 9:
+			case 10:
+			case 11: return (short) TFCOptions.poorOreUnits;
 			default: return 0;
 		}
 	}
@@ -90,6 +96,10 @@ public class ItemTNCOre extends ItemOre
 			case 6: return EnumTier.TierIV;
 			case 7: return EnumTier.TierIV;
 			case 8: return EnumTier.TierIV;
+			case 9: return EnumTier.TierIV;
+			case 10: return EnumTier.TierIV;
+			case 11: return EnumTier.TierIV;
+			case 12: return EnumTier.TierIV;
 			default: return EnumTier.TierX;
 		}
 	}

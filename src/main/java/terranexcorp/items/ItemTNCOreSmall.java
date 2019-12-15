@@ -24,7 +24,7 @@ public class ItemTNCOreSmall extends ItemTNCOre
         setHasSubtypes(true);
         this.setWeight(EnumWeight.HEAVY);
         this.setSize(EnumSize.TINY);
-        metaNames = new String[]{"Chromite","Ilmenite","Rutile"};
+        metaNames = new String[]{"Chromite","Ilmenite","Rutile","Pyrolusite"};
 
     }
 
@@ -63,6 +63,7 @@ public class ItemTNCOreSmall extends ItemTNCOre
             case 0: return EnumTier.TierIV;
             case 1:	return EnumTier.TierIV;
             case 2: return EnumTier.TierIV;
+            case 3: return EnumTier.TierIV;
             default: return EnumTier.TierX;
         }
     }

@@ -9,7 +9,7 @@ import terranexcorp.core.TNCTextures;
 
 public class BlockTNCMetalSheet extends BlockMetalSheet
 {
-    public String[]  metalNames = {"Ferrochrome","Stainless_Steel","Titanium"};
+    public String[]  metalNames = {"Ferrochrome","Stainless_Steel","Titanium","Ferromanganese","Manganese"};
 
     public BlockTNCMetalSheet()
     {

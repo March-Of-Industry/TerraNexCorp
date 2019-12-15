@@ -65,6 +65,7 @@ public class TNCConfig
 		oreList.put("Chromite", getOreData("Chromite", "default", "medium", TNCDetails.ModID + ":Ore", 0, 180, new String[] {"gabbro", "basalt"}, 5, 128, 60, 80));
 		oreList.put("Ilumite", getOreData("Ilumite", "default", "medium", TNCDetails.ModID + ":Ore", 1, 160, new String[] {"igneous intrusive","gneiss","schist"}, 5, 128, 80, 60));
 		oreList.put("Rutile", getOreData("Rutile", "default", "medium", TNCDetails.ModID + ":Ore", 2, 160, new String[] {"gabbro", "granite","basalt"}, 5, 128, 80, 60));
+		oreList.put("Pyrolusite", getOreData("Pyrolusite", "default", "medium", TNCDetails.ModID + ":Ore", 2, 160, new String[] { "igneous intrusive", "igneous extrusive", "sedimentary", "metamorphic"}, 5, 128, 80, 60));
 
 		// getCategoryNames returns an ImmutableSet
 		for (String s : oresConfig.getCategoryNames()) {
