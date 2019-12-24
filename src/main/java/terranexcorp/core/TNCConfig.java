@@ -24,6 +24,7 @@ public class TNCConfig
     public static int bedKnifeDamage = 700;
     public static int bedHammerDamage = 900;
 	public static boolean enableNEIHiding = true;
+	public static boolean enableSimpleRefinement = true;
 
 	private static Configuration oresConfig;
 
@@ -55,6 +56,7 @@ public class TNCConfig
         bedKnifeDamage = config.getInt("Bedrock Knife Damage","Damage changing", 700, 1, 5000, "Used to Change Bedrock Knife Damage ");
         bedHammerDamage = config.getInt("Bedrock Hammer Damage","Damage changing", 900, 1, 5000, "Used to Change Bedrock Hammer Damage ");
         enableNEIHiding = config.getBoolean("NEI Hiding","General",true,"Hide Internal Stuff from NEI");
+        enableSimpleRefinement = config.getBoolean("Crucible Processing","General",false,"Allow processing of (Rutile,Illmenite,Chromite,Pyrolusite) in Crucible");
 
         if(config.hasChanged())
             config.save();
@@ -65,7 +67,7 @@ public class TNCConfig
 		oreList.put("Chromite", getOreData("Chromite", "default", "medium", TNCDetails.ModID + ":Ore", 0, 180, new String[] {"gabbro", "basalt"}, 5, 128, 60, 80));
 		oreList.put("Ilumite", getOreData("Ilumite", "default", "medium", TNCDetails.ModID + ":Ore", 1, 160, new String[] {"igneous intrusive","gneiss","schist"}, 5, 128, 80, 60));
 		oreList.put("Rutile", getOreData("Rutile", "default", "medium", TNCDetails.ModID + ":Ore", 2, 160, new String[] {"gabbro", "granite","basalt"}, 5, 128, 80, 60));
-		oreList.put("Pyrolusite", getOreData("Pyrolusite", "default", "medium", TNCDetails.ModID + ":Ore", 2, 160, new String[] { "igneous intrusive", "igneous extrusive", "sedimentary", "metamorphic"}, 5, 128, 80, 60));
+		oreList.put("Pyrolusite", getOreData("Pyrolusite", "default", "medium", TNCDetails.ModID + ":Ore", 3, 120, new String[] { "igneous intrusive", "igneous extrusive", "sedimentary", "metamorphic"}, 5, 128, 80, 60));
 
 		// getCategoryNames returns an ImmutableSet
 		for (String s : oresConfig.getCategoryNames()) {

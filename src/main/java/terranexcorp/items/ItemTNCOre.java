@@ -1,4 +1,5 @@
 package terranexcorp.items;
+import terranexcorp.core.TNCConfig;
 import terranexcorp.core.TNCDetails;
 import terranexcorp.core.TNCGlobals;
 import com.bioxx.tfc.Items.ItemOre;
@@ -37,22 +38,35 @@ public class ItemTNCOre extends ItemOre
 	@Override
 	public Metal getMetalType(ItemStack is)
 	{
-		switch(is.getItemDamage())
-		{
-			case 0: return TNCGlobals.FERROCHROME;
-			case 1:	return TNCGlobals.TITANIUM;
-			case 2: return TNCGlobals.TITANIUM;
-			case 3: return TNCGlobals.FERROMANGANESE;
-			case 4: return TNCGlobals.FERROCHROME;
-			case 5: return TNCGlobals.TITANIUM;
-			case 6: return TNCGlobals.TITANIUM;
-			case 7: return TNCGlobals.FERROMANGANESE;
-			case 8: return TNCGlobals.FERROCHROME;
-			case 9: return TNCGlobals.TITANIUM;
-			case 10: return TNCGlobals.TITANIUM;
-			case 11: return TNCGlobals.FERROMANGANESE;
-			default: return null;
-		}
+			switch (is.getItemDamage())
+			{
+				case 0:
+					return TNCGlobals.FERROCHROME;
+				case 1:
+					return TNCGlobals.TITANIUM;
+				case 2:
+					return TNCGlobals.TITANIUM;
+				case 3:
+					return TNCGlobals.FERROMANGANESE;
+				case 4:
+					return TNCGlobals.FERROCHROME;
+				case 5:
+					return TNCGlobals.TITANIUM;
+				case 6:
+					return TNCGlobals.TITANIUM;
+				case 7:
+					return TNCGlobals.FERROMANGANESE;
+				case 8:
+					return TNCGlobals.FERROCHROME;
+				case 9:
+					return TNCGlobals.TITANIUM;
+				case 10:
+					return TNCGlobals.TITANIUM;
+				case 11:
+					return TNCGlobals.FERROMANGANESE;
+				default:
+					return null;
+			}
 	}
 
 	@Override
@@ -79,7 +93,15 @@ public class ItemTNCOre extends ItemOre
 	@Override
 	public boolean isSmeltable(ItemStack is)
 	{
-		return true;
+		if (TNCConfig.enableSimpleRefinement)
+		{
+			return true;
+		}
+		else
+		{
+			//put a switch case here if some metals should not be changed by config in the future
+			return false;
+		}
 	}
 
 	@Override

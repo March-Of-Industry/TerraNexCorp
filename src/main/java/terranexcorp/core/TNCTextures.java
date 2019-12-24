@@ -8,5 +8,7 @@ public class TNCTextures
 	public static IIcon sheetFerrochrome;
 	public static IIcon sheetStainlessSteel;
 	public static IIcon sheetTitanium;
+	public static IIcon sheetFerromanganese;
+	public static IIcon sheetManganese;
 
 }

@@ -22,6 +22,12 @@ item.Ore.Rich_Rutile.name=Rich Rutile
 tile.Ore.Rutile.name=Rutile Ore
 item.Small_Ore.Rutile.name=Rutile Sample
 
+item.Ore.Pyrolusite.name=Pyrolusite
+item.Ore.Poor_Pyrolusite.name=Poor Pyrolusite
+item.Ore.Rich_Pyrolusite.name=Rich Pyrolusite
+tile.Ore.Pyrolusite.name=Pyrolusite Ore
+item.Small_Ore.Pyrolusite.name=Pyrolusite Sample
+
 item.Ferrochrome_Ingot.name=Ferrochrome Ingot
 item.Ferrochrome_Double_Ingot.name=Ferrochrome Double Ingot
 item.Ferrochrome_Unshaped.name=Unshaped Ferrochrome
@@ -37,7 +43,19 @@ item.Titanium_Ingot.name=Titanium Ingot
 item.Titanium_Double_Ingot.name=Titanium Double Ingot
 item.Titanium_Sheet.name=Titanium Sheet
 
+item.Ferromanganese_Unshaped.name=Unshaped Ferromanganese
+item.Ferromanganese_Ingot.name=Ferromanganese Ingot
+item.Ferromanganese_Double_Ingot.name=Ferromanganese Double Ingot
+item.Ferromanganese_Sheet.name=Ferromanganese Sheet
+
+item.Manganese_Unshaped.name=Unshaped Manganese
+item.Manganese_Ingot.name=Manganese Ingot
+item.Manganesee_Double_Ingot.name=Manganese Double Ingot
+item.Manganese_Sheet.name=Manganese Sheet
+
 gui.metal.Ferrochrome=Ferrochrome
+gui.metal.Ferromanganese=Ferromanganese
+gui.metal.Manganese=Manganese
 gui.metal.StainlessSteel=Stainless Steel
 gui.metal.Titanium=Titanium
 

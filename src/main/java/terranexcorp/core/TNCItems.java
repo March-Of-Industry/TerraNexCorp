@@ -100,8 +100,8 @@ public class TNCItems
 		ferroChromeDoubleIngot = new ItemTNCIngot("Ferrochrome",200).setUnlocalizedName("Ferrochrome_Double_Ingot");
 		ferroChromeUnshaped = new ItemTNCMeltedMetal().setUnlocalizedName("Ferrochrome_Unshaped");
 
-        stainlessSteelIngot = new ItemTNCIngot("Stainless Steel",100).setUnlocalizedName("Stainless_Steel_Ingot");
-        stainlessSteelDoubleIngot = new ItemTNCIngot("Stainless Steel",200).setUnlocalizedName("Stainless_Steel_Double_Ingot");
+        stainlessSteelIngot = new ItemTNCIngot("Stainless_Steel",100).setUnlocalizedName("Stainless_Steel_Ingot");
+        stainlessSteelDoubleIngot = new ItemTNCIngot("Stainless_Steel",200).setUnlocalizedName("Stainless_Steel_Double_Ingot");
         stainlessSteelUnshaped = new ItemTNCMeltedMetal().setUnlocalizedName("Stainless_Steel_Unshaped");
 
         titaniumIngot = new ItemTNCIngot("Titanium",100).setUnlocalizedName("Titanium_Ingot");
@@ -119,10 +119,10 @@ public class TNCItems
 
         //sheets
         ferroChromeSheet= new ItemTNCMetalSheet("Ferrochrome",0).setUnlocalizedName("Ferrochrome_Sheet");
-        stainlessSteelSheet= new ItemTNCMetalSheet("Stainless Steel",1).setUnlocalizedName("Stainless_Steel_Sheet");
+        stainlessSteelSheet= new ItemTNCMetalSheet("Stainless_Steel",1).setUnlocalizedName("Stainless_Steel_Sheet");
         titaniumSheet= new ItemTNCMetalSheet("Titanium",2).setUnlocalizedName("Titanium_Sheet");
         ferroManganeseSheet= new ItemTNCMetalSheet("Ferromanganese",3).setUnlocalizedName("Ferromanganese_Sheet");
-        manganeseSheet= new ItemTNCMetalSheet("Manganese",3).setUnlocalizedName("Manganese_Sheet");
+        manganeseSheet= new ItemTNCMetalSheet("Manganese",4).setUnlocalizedName("Manganese_Sheet");
 		//ores
 		oreChunk = new ItemTNCOre().setFolder("ores/").setUnlocalizedName("Ore");
 		smallOreChunk = new ItemTNCOreSmall().setUnlocalizedName("Small_Ore");
@@ -151,6 +151,18 @@ public class TNCItems
         GameRegistry.registerItem(titaniumUnshaped,titaniumUnshaped.getUnlocalizedName());
         GameRegistry.registerItem(titaniumSheet,titaniumSheet.getUnlocalizedName());
 
+        GameRegistry.registerItem(ferroManganeseIngot,ferroManganeseIngot.getUnlocalizedName());
+        GameRegistry.registerItem(ferroManganeseDoubleIngot,ferroManganeseDoubleIngot.getUnlocalizedName());
+        GameRegistry.registerItem(ferroManganeseUnshaped,ferroManganeseUnshaped.getUnlocalizedName());
+        GameRegistry.registerItem(ferroManganeseSheet,ferroManganeseSheet.getUnlocalizedName());
+
+        GameRegistry.registerItem(manganeseIngot,manganeseIngot.getUnlocalizedName());
+        GameRegistry.registerItem(manganeseDoubleIngot,manganeseDoubleIngot.getUnlocalizedName());
+        GameRegistry.registerItem(manganeseUnshaped,manganeseUnshaped.getUnlocalizedName());
+        GameRegistry.registerItem(manganeseSheet,manganeseSheet.getUnlocalizedName());
+
+
+
         GameRegistry.registerItem(oreChunk, oreChunk.getUnlocalizedName());
         GameRegistry.registerItem(smallOreChunk, smallOreChunk.getUnlocalizedName());
     }
@@ -159,9 +171,13 @@ public class TNCItems
     {
         TNCGlobals.FERROCHROME = new Metal("Ferrochrome", ferroChromeUnshaped, ferroChromeIngot);
         MetalRegistry.instance.addMetal(TNCGlobals.FERROCHROME, Alloy.EnumTier.TierI);
-        TNCGlobals.STAINLESS_STEEL = new Metal("Stainless Steel", stainlessSteelUnshaped, stainlessSteelIngot);
+        TNCGlobals.STAINLESS_STEEL = new Metal("Stainless_Steel", stainlessSteelUnshaped, stainlessSteelIngot);
         MetalRegistry.instance.addMetal(TNCGlobals.STAINLESS_STEEL, Alloy.EnumTier.TierII);
         TNCGlobals.TITANIUM = new Metal("Titanium", titaniumUnshaped, titaniumIngot);
         MetalRegistry.instance.addMetal(TNCGlobals.TITANIUM, Alloy.EnumTier.TierI);
+        TNCGlobals.FERROMANGANESE = new Metal("Ferromanganese", ferroManganeseUnshaped, ferroManganeseIngot);
+        MetalRegistry.instance.addMetal(TNCGlobals.FERROMANGANESE, Alloy.EnumTier.TierI);
+        TNCGlobals.MANGANESE = new Metal("Manganese", manganeseUnshaped, manganeseIngot);
+        MetalRegistry.instance.addMetal(TNCGlobals.MANGANESE, Alloy.EnumTier.TierI);
     }
 }
