@@ -1,11 +1,13 @@
+def project_dir = "C:/Users/frogm/Desktop/test"
+
 buildscript {
     repositories {
         mavenCentral()
         maven {
-            name = "Minecraft Forge"
-            url = "http://files.minecraftforge.net/maven"
+            name = "gt"
+            url = "https://gregtech.overminddl1.com/"
         }
-         maven {
+        maven {
             name = "sonatype"
             url = "https://oss.sonatype.org/content/repositories/snapshots/"
         }
@@ -15,32 +17,33 @@ buildscript {
     }
 }
 
-// define the properties file
-ext.configFile = file "build.prop"
+apply plugin: 'forge'
+apply plugin: 'idea'
+//apply plugin: 'curseforge'
 
-configFile.withReader {
-    // read config.  it shall from now on be referenced as simply config or as project.config
+file "build.properties" withReader {
     def prop = new Properties()
     prop.load(it)
-    project.ext.config = new ConfigSlurper().parse prop
+    ext.config = new ConfigSlurper().parse prop
 }
 
-allprojects {
-    apply plugin: 'java'
-    apply plugin: 'forge'
-    apply plugin: 'maven'
-    group = config.group_name
-    version = config.mod_version
-    archivesBaseName = "[${config.minecraft_version}]${config.mod_id}"
+//def version_mod = version_mods;
+def version_mc = "${config.version_mc}"
+def version_mod = "[${config.version_mc}]-${config.version_mod}"
+group = "${config.group_name}"
+archivesBaseName = "[${config.version_mc}]-TerraNexCorp-${config.version_mod}"
 
-    minecraft {
-        version = config.minecraft_version + "-" + config.forge_version
-        if(file('../run').exists()) {
-            runDir = "../run"
-        } else {
-            runDir = ""
-        }
-    }
+sourceCompatibility = targetCompatibility = "1.8"
+compileJava {
+    sourceCompatibility = targetCompatibility = "1.8"
+}
+
+minecraft {
+    version = "${config.version_mc}-${config.version_forge}"
+    runDir = "run"
+
+    replace "@VERSION@", version_mod
+    replaceIn "FTBUFinals.java"
 }
 
 repositories {
@@ -55,9 +58,13 @@ repositories {
         url "http://chickenbones.net/maven/"
     }
 }
- 
+
+
+
+
 dependencies {
-	// Forcing version numbers for everything and using NO-NEI WAILA since the "transitive dependency resolution (gradle magic)" is currently borked.
+    compile fileTree(dir: "eclipse/mods", include: '*.jar')
+    //compile files(project_dir + "/Exported/TerraNexCorp-" + version_mc + "-" + version_mod + "-dev.jar")
 	compile "codechicken:CodeChickenCore:1.7.10-1.0.4.35:dev"
 	compile "codechicken:CodeChickenLib:1.7.10-1.1.3.127:dev"
 	compile "codechicken:NotEnoughItems:1.7.10-1.0.4.95:dev"
@@ -65,25 +72,23 @@ dependencies {
     compile files("libs/[1.7.10]TerraFirmaCraft-deobf-0.79.29.jar")
 }
 
-//Creates a compiled de-obfuscated jar
-task deobfJar(type: Jar) {
-    from sourceSets.main.output
-    appendix = 'deobf'
+sourceSets {
+    main {
+        java {
+            srcDir project_dir + archivesBaseName + "/src/main/java"
+        }
+        resources {
+            srcDir project_dir + archivesBaseName + "/src/main/resources"
+        }
+        output.resourcesDir = output.classesDir
+    }
 }
 
-//creates a jar containing only the src
-task sourceJar(type: Jar) {
-    from sourceSets.main.allSource
-    appendix = 'src'
+tasks.withType(Jar) {
+    destinationDir = file(project_dir + "/Exported/")
 }
 
-tasks.build.dependsOn('sourceJar', 'deobfJar')
-
-dependencies {
-    // Copy "[1.7.10]TerraFirmaCraft-deobf-0.79.0.jar" file into the ./libs directory
-}
-
-processResources {
+processResources{
 	// First we just copy in the mcmod.info file
 	from(sourceSets.main.resources.srcDirs) {
         include '**/*.info'
@@ -103,12 +108,15 @@ processResources {
     }
 }
 
-task wrapper(type: Wrapper) {
-	gradleVersion = '2.2.1'
+task sourceJar(type: Jar) {
+    from sourceSets.main.java
+    classifier = 'src'
 }
 
-
-task copyResources(type: Copy) {
-    from "src/main/resources"
-    into "out/production/classes"
+task deobfJar(type: Jar) {
+    from sourceSets.main.output
+    classifier = 'dev'
 }
+
+build.dependsOn deobfJar
+build.dependsOn sourceJar
