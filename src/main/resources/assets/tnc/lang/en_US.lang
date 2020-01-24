@@ -50,7 +50,7 @@ item.Ferromanganese_Sheet.name=Ferromanganese Sheet
 
 item.Manganese_Unshaped.name=Unshaped Manganese
 item.Manganese_Ingot.name=Manganese Ingot
-item.Manganesee_Double_Ingot.name=Manganese Double Ingot
+item.Manganese_Double_Ingot.name=Manganese Double Ingot
 item.Manganese_Sheet.name=Manganese Sheet
 
 gui.metal.Ferrochrome=Ferrochrome

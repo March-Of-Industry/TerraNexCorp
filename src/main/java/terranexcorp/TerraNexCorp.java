@@ -12,6 +12,7 @@ import terranexcorp.core.TNCDetails;
 import terranexcorp.core.TNCItems;
 import terranexcorp.core.TNCBlocks;
 import terranexcorp.core.TNCConfig;
+import terranexcorp.core.compat.TNCOreDict;
 import terranexcorp.items.ItemHeat;
 import terranexcorp.minetweaker.TNCminetweaker;
 import terranexcorp.worldgen.WorldGenSampleRocks;
@@ -58,7 +59,7 @@ public class TerraNexCorp
 	public void initialize(FMLInitializationEvent event)
 	{
 		proxy.hideNEIItems();
-
+		TNCOreDict.addOreDict();
 	}
 
 	@EventHandler
