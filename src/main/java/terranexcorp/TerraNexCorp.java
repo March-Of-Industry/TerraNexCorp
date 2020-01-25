@@ -4,6 +4,7 @@ import java.io.File;
 import java.util.Map;
 
 import blusunrize.immersiveengineering.api.energy.DieselHandler;
+import cpw.mods.fml.common.Loader;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
 import org.lwjgl.Sys;
@@ -60,6 +61,9 @@ public class TerraNexCorp
 	{
 		proxy.hideNEIItems();
 		TNCOreDict.addOreDict();
+		if (Loader.isModLoaded(TNCDetails.MODID_TFCTECH)) {
+			TNCOreDict.tfcTechOre();
+		}
 	}
 
 	@EventHandler
