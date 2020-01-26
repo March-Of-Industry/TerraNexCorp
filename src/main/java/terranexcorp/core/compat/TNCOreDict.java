@@ -54,6 +54,11 @@ public class TNCOreDict
 
         //Clay Insulator
         OreDictionary.registerOre("clayInsulator", GameRegistry.findItem(TNCDetails.MODID_TFCTECH,"item.Insulator Part"));
+
+        //Plate
+        OreDictionary.registerOre("plateAluminum", GameRegistry.findItem(TNCDetails.MODID_TFCTECH,"item.Aluminum Sheet"));
+        OreDictionary.registerOre("plateElectrum", GameRegistry.findItem(TNCDetails.MODID_TFCTECH,"item.Electrum Sheet"));
+        OreDictionary.registerOre("plateConstantan", GameRegistry.findItem(TNCDetails.MODID_TFCTECH,"item.Constantan Sheet"));
     }
 
 }

@@ -1,13 +1,9 @@
 package terranexcorp;
 
 import java.io.File;
-import java.util.Map;
-
-import blusunrize.immersiveengineering.api.energy.DieselHandler;
 import cpw.mods.fml.common.Loader;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
-import org.lwjgl.Sys;
 import terranexcorp.core.TNCCommonProxy;
 import terranexcorp.core.TNCDetails;
 import terranexcorp.core.TNCItems;
