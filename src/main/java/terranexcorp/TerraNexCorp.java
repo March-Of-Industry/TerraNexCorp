@@ -2,6 +2,7 @@ package terranexcorp;
 
 import java.io.File;
 import cpw.mods.fml.common.Loader;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
 import terranexcorp.core.TNCCommonProxy;
@@ -10,6 +11,7 @@ import terranexcorp.core.TNCItems;
 import terranexcorp.core.TNCBlocks;
 import terranexcorp.core.TNCConfig;
 import terranexcorp.core.compat.TNCOreDict;
+import terranexcorp.eventhandlers.RainOverride;
 import terranexcorp.items.ItemHeat;
 import terranexcorp.minetweaker.TNCminetweaker;
 import terranexcorp.worldgen.WorldGenSampleRocks;
@@ -55,6 +57,7 @@ public class TerraNexCorp
 	@EventHandler
 	public void initialize(FMLInitializationEvent event)
 	{
+		proxy.init();
 		proxy.hideNEIItems();
 		TNCOreDict.addOreDict();
 		if (Loader.isModLoaded(TNCDetails.MODID_TFCTECH)) {

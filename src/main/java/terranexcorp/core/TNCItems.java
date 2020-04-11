@@ -61,6 +61,8 @@ public class TNCItems
 
 
     public static Item oreChunk;
+    public static Item crushedOreChunk;
+    public static Item advancedCrushedOreChunk;
     public static Item smallOreChunk;
 
     //Materials
@@ -69,18 +71,12 @@ public class TNCItems
     public static float BedrockEff = 18;
     public static int DepleatableBedrockUses = 2000000000;
 
-
-
-
-
     public static void init()
     {
         ItemSetup();
         registerItems();
         registerMetal();
     }
-
-
 
 	public static void ItemSetup()
 	{
@@ -126,6 +122,8 @@ public class TNCItems
 		//ores
 		oreChunk = new ItemTNCOre().setFolder("ores/").setUnlocalizedName("Ore");
 		smallOreChunk = new ItemTNCOreSmall().setUnlocalizedName("Small_Ore");
+        crushedOreChunk = new ItemCrushedOre().setFolder("ores/crushed/").setUnlocalizedName("Crushed_Ore");
+        advancedCrushedOreChunk = new ItemAdvancedCrushedOre().setFolder("ores/crushed/").setUnlocalizedName("Advanced_Crushed_Ore");
 	}
 
     public static void registerItems()
@@ -165,6 +163,8 @@ public class TNCItems
 
         GameRegistry.registerItem(oreChunk, oreChunk.getUnlocalizedName());
         GameRegistry.registerItem(smallOreChunk, smallOreChunk.getUnlocalizedName());
+        GameRegistry.registerItem(crushedOreChunk, crushedOreChunk.getUnlocalizedName());
+        GameRegistry.registerItem(advancedCrushedOreChunk, advancedCrushedOreChunk.getUnlocalizedName());
     }
 
     public static void registerMetal()
