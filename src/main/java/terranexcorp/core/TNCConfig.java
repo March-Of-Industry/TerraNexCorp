@@ -24,7 +24,7 @@ public class TNCConfig
     public static int bedKnifeDamage = 700;
     public static int bedHammerDamage = 900;
 	public static boolean enableNEIHiding = true;
-	public static boolean enableRainFix = false;
+	public static boolean enableRainFix = true;
 	public static boolean enableSimpleRefinement = false;
 	public static int crushedOreUnits = 35;
 	private static Configuration oresConfig;
@@ -57,7 +57,7 @@ public class TNCConfig
         bedKnifeDamage = config.getInt("Bedrock Knife Damage","Damage changing", 700, 1, 5000, "Used to Change Bedrock Knife Damage ");
         bedHammerDamage = config.getInt("Bedrock Hammer Damage","Damage changing", 900, 1, 5000, "Used to Change Bedrock Hammer Damage ");
         enableNEIHiding = config.getBoolean("NEI Hiding","General",true,"Hide Internal Stuff from NEI");
-        enableRainFix = config.getBoolean("Use Event to add rain particles","General",false,"Use event to add the splash particles and sound back to game if using patched tfc+dragonAPI with NORAINFX enabled");
+        enableRainFix = config.getBoolean("Use Event to add rain particles","General",true,"Use event to add the splash particles and sound back to game if using patched tfc+dragonAPI with NORAINFX enabled");
         enableSimpleRefinement = config.getBoolean("Crucible Processing","General",false,"Allow processing of (Rutile,Illmenite,Chromite,Pyrolusite,Bauxite) in Crucible");
 		crushedOreUnits = config.getInt("Crushed Ore Units","Unit Amounts", 35, 1, 3000, "Used to Change the Metal Units in Crushed Ore ");
         if(config.hasChanged())

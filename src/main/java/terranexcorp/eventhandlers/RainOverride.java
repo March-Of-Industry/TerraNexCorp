@@ -10,6 +10,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.WorldClient;
+import net.minecraft.client.particle.EntityFlameFX;
 import net.minecraft.client.particle.EntityRainFX;
 import net.minecraft.client.particle.EntitySmokeFX;
 import net.minecraft.entity.EntityLivingBase;
@@ -28,20 +29,33 @@ public class RainOverride
     private Random randRain;
     private int rainUpdateCount;
     private Minecraft minecraft;
+    private int intervalDelay;
 
     public RainOverride(Minecraft mc)
     {
         this.minecraft= mc;
         rainUpdateCount = 0;
+        intervalDelay = 0;
         randRain = new Random();
     }
 
     @SubscribeEvent
     public void onTick(TickEvent.RenderTickEvent event)
     {
-        if(minecraft.theWorld != null && minecraft.theWorld.isRaining())
+        if (event.phase == TickEvent.Phase.START)
         {
-            doRainClient(randRain,rainUpdateCount++,minecraft.thePlayer);
+            if (minecraft.theWorld != null && minecraft.theWorld.isRaining())
+            {
+                if( intervalDelay == 0)
+                {
+                    doRainClient(randRain, rainUpdateCount++, minecraft.thePlayer);
+                    intervalDelay = 10;
+                }
+                else
+                {
+                    intervalDelay--;
+                }
+            }
         }
     }
 
