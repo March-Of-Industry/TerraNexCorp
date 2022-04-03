@@ -19,6 +19,7 @@ import com.google.common.collect.ObjectArrays;
 public class TNCConfig
 {
 	public static Configuration config;
+    public static String windowText = "March of Industry";
     public static int bedSwordDamage = 1200;
     public static int bedMaceDamage = 1200;
     public static int bedKnifeDamage = 700;

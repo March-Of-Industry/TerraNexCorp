@@ -1,6 +1,7 @@
 package terranexcorp.items;
 
 import com.bioxx.tfc.Items.ItemOre;
+import com.bioxx.tfc.api.Constant.Global;
 import com.bioxx.tfc.api.Metal;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.item.ItemStack;
@@ -37,7 +38,6 @@ public class ItemAdvancedCrushedOre extends ItemOre
 				case 0:
 					return TNCGlobals.FERROCHROME;
 				case 1:
-					return TNCGlobals.TITANIUM;
 				case 2:
 					return TNCGlobals.TITANIUM;
 				case 3:

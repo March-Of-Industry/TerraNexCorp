@@ -3,6 +3,7 @@ package terranexcorp.core.compat;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
+import terranexcorp.core.TNCConfig;
 import terranexcorp.core.TNCDetails;
 import terranexcorp.core.TNCItems;
 
@@ -59,6 +60,19 @@ public class TNCOreDict
         OreDictionary.registerOre("plateAluminum", GameRegistry.findItem(TNCDetails.MODID_TFCTECH,"item.Aluminum Sheet"));
         OreDictionary.registerOre("plateElectrum", GameRegistry.findItem(TNCDetails.MODID_TFCTECH,"item.Electrum Sheet"));
         OreDictionary.registerOre("plateConstantan", GameRegistry.findItem(TNCDetails.MODID_TFCTECH,"item.Constantan Sheet"));
+
+    }
+    public static void customItemsFrogs()
+    {
+        OreDictionary.registerOre("frogCopper", GameRegistry.findItem(TNCDetails.MODID_CUSTOM, "copper_frog"));
+        OreDictionary.registerOre("frogSilver", GameRegistry.findItem(TNCDetails.MODID_CUSTOM, "silver_frog"));
+        OreDictionary.registerOre("frogGold", GameRegistry.findItem(TNCDetails.MODID_CUSTOM, "gold_frog"));
+        OreDictionary.registerOre("frogPlatinum", GameRegistry.findItem(TNCDetails.MODID_CUSTOM, "platinum_frog"));
+        OreDictionary.registerOre("frogBlackSteel", GameRegistry.findItem(TNCDetails.MODID_CUSTOM, "black_steel_frog"));
+        OreDictionary.registerOre("frogStainlessSteel", GameRegistry.findItem(TNCDetails.MODID_CUSTOM, "stainless_steel_frog"));
+        OreDictionary.registerOre("frogTitanium", GameRegistry.findItem(TNCDetails.MODID_CUSTOM, "titanium_frog"));
+        OreDictionary.registerOre("frogTungsten", GameRegistry.findItem(TNCDetails.MODID_CUSTOM, "tungsten_frog"));
+        OreDictionary.registerOre("frogBedrock", GameRegistry.findItem(TNCDetails.MODID_CUSTOM, "bedrock_frog"));
     }
 
 }
