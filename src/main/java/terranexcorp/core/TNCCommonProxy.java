@@ -14,6 +14,8 @@ import net.minecraftforge.common.config.Configuration;
 
 public class TNCCommonProxy
 {
+	public void preinit(){}
+
 	public void init(){}
 
     private static Configuration oresConfig;

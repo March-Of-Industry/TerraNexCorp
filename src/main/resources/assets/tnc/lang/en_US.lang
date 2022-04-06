@@ -53,6 +53,31 @@ item.Manganese_Ingot.name=Manganese Ingot
 item.Manganese_Double_Ingot.name=Manganese Double Ingot
 item.Manganese_Sheet.name=Manganese Sheet
 
+item.Crushed_Ore.Native_Copper.name=Crushed Native Copper
+item.Crushed_Ore.Native_Gold.name=Crushed Native Gold
+item.Crushed_Ore.Native_Platinum.name=Crushed Native Platinum
+item.Crushed_Ore.Hematite.name=Crushed Hematite
+item.Crushed_Ore.Native_Silver.name=Crushed Native Silver
+item.Crushed_Ore.Cassiterite.name=Crushed Cassiterite
+item.Crushed_Ore.Galena.name=Crushed Galena
+item.Crushed_Ore.Bismuthinite.name=Crushed Bismuthinite
+item.Crushed_Ore.Garnierite.name=Crushed Garnierite
+item.Crushed_Ore.Malachite.name=Crushed Malachite
+item.Crushed_Ore.Magnetite.name=Crushed Magnetite
+item.Crushed_Ore.Limonite.name=Crushed Limonite
+item.Crushed_Ore.Sphalerite.name=Crushed Sphalerite
+item.Crushed_Ore.Tetrahedrite.name=Crushed Tetrahedrite
+item.Crushed_Ore.Pitchblende.name=Crushed Pitchblende
+item.Crushed_Ore.Cinnabar.name=Crushed Cinnabar
+item.Crushed_Ore.Lapis_Lazuli.name=Crushed Lapis_Lazuli
+item.Advanced_Crushed_Ore.Chromite.name=Crushed Chromite
+item.Advanced_Crushed_Ore.Ilmenite.name=Crushed Ilmenite
+item.Advanced_Crushed_Ore.Rutile.name=Crushed Rutile
+item.Advanced_Crushed_Ore.Pyrolusite.name=Crushed Pyrolusite
+item.Advanced_Crushed_Ore.Bauxite.name=Crushed Bauxite
+
+
+
 gui.metal.Ferrochrome=Ferrochrome
 gui.metal.Ferromanganese=Ferromanganese
 gui.metal.Manganese=Manganese
