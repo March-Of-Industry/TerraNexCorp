@@ -1,4 +1,4 @@
-def project_dir = "C:/Users/frogm/Desktop/TerraNexCorp"
+def project_dir = "C:/Users/frogm/Desktop/TerraNexCorp - Copy"
 
 buildscript {
     repositories {
@@ -31,7 +31,7 @@ file "build.properties" withReader {
 def version_mc = "${config.version_mc}"
 def version_mod = "[${config.version_mc}]-${config.version_mod}"
 group = "${config.group_name}"
-archivesBaseName = "[${config.version_mc}]-TerraNexCorp-${config.version_mod}"
+archivesBaseName = "[${config.version_mc}]-TerraFirmaCraftEventRainFix-${config.version_mod}"
 
 sourceCompatibility = targetCompatibility = "1.8"
 compileJava {
