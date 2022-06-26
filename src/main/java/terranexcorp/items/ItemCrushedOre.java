@@ -73,11 +73,11 @@ public class ItemCrushedOre extends ItemOre
 	{
 		switch (is.getItemDamage())
 		{
-			case 0:
-			case 1:
-			case 2:
-			case 3: return (short) TNCConfig.crushedOreUnits;
-			default: return 0;
+			case 14:
+			case 15:
+			case 16:
+				return 0;
+			default: return (short) TNCConfig.crushedOreUnits;
 		}
 	}
 
