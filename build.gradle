@@ -70,6 +70,7 @@ dependencies {
 	compile "codechicken:NotEnoughItems:1.7.10-1.0.4.95:dev"
 	compile "mcp.mobius.waila:Waila:1.5.11-RC2-NONEI_1.7.10"
     compile files("libs/[1.7.10]TerraFirmaCraft-deobf-0.79.29.jar")
+    compile files("libs/[1.7.10]TFCTech-deobf-0.2.10-A15.jar")
 }
 
 sourceSets {

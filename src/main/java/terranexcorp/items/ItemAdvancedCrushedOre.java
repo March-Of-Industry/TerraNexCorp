@@ -63,7 +63,8 @@ public class ItemAdvancedCrushedOre extends ItemOre
 	@Override
 	public boolean isSmeltable(ItemStack is)
 	{
-		return true;
+		return TNCConfig.enableSimpleRefinement;
+
 	}
 
 	@Override

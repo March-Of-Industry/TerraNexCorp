@@ -47,7 +47,7 @@ public class ItemCrushedOre extends ItemOre
 				case 3:
 				case 10:
 				case 11:
-					return Global.WROUGHTIRON;
+					return Global.PIGIRON;
 				case 6:
 					return Global.LEAD;
 				case 8:
@@ -84,19 +84,32 @@ public class ItemCrushedOre extends ItemOre
 	@Override
 	public boolean isSmeltable(ItemStack is)
 	{
-		return TNCConfig.enableSimpleRefinement;
-		//if advanced stuff in future is needed
-		/*
-		if (TNCConfig.enableSimpleRefinement)
+		switch (is.getItemDamage())
 		{
-			return true;
+			case 0:
+			case 9:
+			case 13://Copper
+			case 7://Bismuth
+			case 1://Gold
+			case 3:
+			case 10:
+			case 11://Iron
+			case 6://Lead
+			case 8://Nickel
+			case 2://Platinum
+			case 4:///Silver
+			case 5://Tin
+			case 12://Zinc
+				return true;
+			case 14://Pitchblend
+			case 15://Cinnabar
+			case 16://Lapis Lazuli
+			default:
+				return false;
 		}
-		else
-		{
-			//put a switch case here if some metals should not be changed by config in the future
-			return false;
-		}*/
+
 	}
+
 
 	@Override
 	public EnumTier getSmeltTier(ItemStack is)

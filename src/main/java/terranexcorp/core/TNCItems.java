@@ -1,10 +1,12 @@
 package terranexcorp.core;
 
 import com.bioxx.tfc.Items.ItemMetalSheet;
+import cpw.mods.fml.common.Loader;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraftforge.common.util.EnumHelper;
 import terranexcorp.core.TNCItems;
 import terranexcorp.items.*;
+import terranexcorp.items.compat.ItemTFCTechBillet;
 import terranexcorp.items.tools.ItemNewSword;
 import terranexcorp.items.tools.ItemNewHammer;
 import terranexcorp.items.tools.ItemNewKnife;
@@ -65,6 +67,10 @@ public class TNCItems
     public static Item advancedCrushedOreChunk;
     public static Item smallOreChunk;
 
+    public static Item tinyBillet1;
+    public static Item tinyBillet2;
+    public static Item tinyBilletTFCTech;
+
     //Materials
     public static ToolMaterial BedrockToolMaterial;
     public static int BedrockUses = -1;
@@ -124,6 +130,15 @@ public class TNCItems
 		smallOreChunk = new ItemTNCOreSmall().setUnlocalizedName("Small_Ore");
         crushedOreChunk = new ItemCrushedOre().setFolder("ores/crushed/").setUnlocalizedName("Crushed_Ore");
         advancedCrushedOreChunk = new ItemAdvancedCrushedOre().setFolder("ores/crushed/").setUnlocalizedName("Advanced_Crushed_Ore");
+
+        //billets
+        tinyBillet1 = new ItemTNCBillet(10).setUnlocalizedName("Tiny_Billet");
+        tinyBillet2 = new ItemTNCBillet2(10).setUnlocalizedName("Tiny_Billet_2");
+
+        if (Loader.isModLoaded(TNCDetails.MODID_TFCTECH))
+        {
+            tinyBilletTFCTech = new ItemTFCTechBillet(10).setUnlocalizedName("Tiny_Billet_TFC_Tech");
+        }
 	}
 
     public static void registerItems()
@@ -165,6 +180,15 @@ public class TNCItems
         GameRegistry.registerItem(smallOreChunk, smallOreChunk.getUnlocalizedName());
         GameRegistry.registerItem(crushedOreChunk, crushedOreChunk.getUnlocalizedName());
         GameRegistry.registerItem(advancedCrushedOreChunk, advancedCrushedOreChunk.getUnlocalizedName());
+
+        GameRegistry.registerItem(tinyBillet1,tinyBillet1.getUnlocalizedName());
+        GameRegistry.registerItem(tinyBillet2,tinyBillet2.getUnlocalizedName());
+
+        if (Loader.isModLoaded(TNCDetails.MODID_TFCTECH))
+        {
+            GameRegistry.registerItem(tinyBilletTFCTech,tinyBilletTFCTech.getUnlocalizedName());
+        }
+
     }
 
     public static void registerMetal()
@@ -180,4 +204,7 @@ public class TNCItems
         TNCGlobals.MANGANESE = new Metal("Manganese", manganeseUnshaped, manganeseIngot);
         MetalRegistry.instance.addMetal(TNCGlobals.MANGANESE, Alloy.EnumTier.TierI);
     }
+
+
+
 }
